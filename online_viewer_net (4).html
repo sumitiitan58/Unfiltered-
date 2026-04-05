@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unfiltered Sumit</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff0000, #ff4d4d);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* SECTION */
+section {
+    padding: 20px;
+}
+
+h2 {
+    border-left: 4px solid red;
+    padding-left: 8px;
+}
+
+/* ABOUT */
+.about {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* OWNER */
+.owner {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.owner img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* VIDEO SLIDER */
+.video-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.video-card {
+    min-width: 250px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.video-card img {
+    width: 100%;
+}
+
+.video-title {
+    padding: 8px;
+    font-size: 13px;
+}
+
+/* SOCIAL GRID */
+.social {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.social img {
+    width: 35px;
+    margin: 10px;
+}
+
+/* BUTTON */
+.button {
+    display: inline-block;
+    background: red;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="left">
+<img src="profile.png">
+<b>Unfiltered Sumit</b>
+</div>
+</header>
+
+<!-- ABOUT -->
+<section>
+<h2>About Channel</h2>
+<p class="about">
+Unfiltered Sumit is a platform where we explore real facts, hidden truths, and trending topics.  
+Our goal is to present reality in a simple, engaging, and entertaining way.  
+We believe in sharing knowledge that makes people think and understand the world better.
+</p>
+</section>
+
+<!-- OWNER -->
+<section>
+<h2>👤 About Owner</h2>
+<div class="owner">
+<img src="profile.png">
+<div>
+<b>Sumit Kumar</b>
+<p>
+Creator of Unfiltered Sumit. I make fact-based and reality content to educate and entertain people.
+</p>
+</div>
+</div>
+</section>
+
+<!-- VIDEOS -->
+<section>
+<h2>🔥 My Videos</h2>
+
+<div class="video-slider">
+
+<!-- 15 VIDEOS -->
+<div class="video-card"><a href="https://youtu.be/vVWFTl_FMw4"><img src="https://img.youtube.com/vi/vVWFTl_FMw4/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/UzDTLF3yUQY"><img src="https://img.youtube.com/vi/UzDTLF3yUQY/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/-2SzvAXrVSk"><img src="https://img.youtube.com/vi/-2SzvAXrVSk/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/sqjittzc1m4"><img src="https://img.youtube.com/vi/sqjittzc1m4/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/IfWGF8D4CTQ"><img src="https://img.youtube.com/vi/IfWGF8D4CTQ/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/GJuUIYFPKLY"><img src="https://img.youtube.com/vi/GJuUIYFPKLY/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/Ufa4-yUZfdg"><img src="https://img.youtube.com/vi/Ufa4-yUZfdg/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/YXBSrgHHdvo"><img src="https://img.youtube.com/vi/YXBSrgHHdvo/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/MtV8bOBUYUM"><img src="https://img.youtube.com/vi/MtV8bOBUYUM/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/jMGTFIKgICA"><img src="https://img.youtube.com/vi/jMGTFIKgICA/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/dqr4-OIoSCc"><img src="https://img.youtube.com/vi/dqr4-OIoSCc/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/d_kxHXVcjco"><img src="https://img.youtube.com/vi/d_kxHXVcjco/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/tU2X-d-0Pjw"><img src="https://img.youtube.com/vi/tU2X-d-0Pjw/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/GBg8aiBNgWU"><img src="https://img.youtube.com/vi/GBg8aiBNgWU/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+<div class="video-card"><a href="https://youtu.be/vVWFTl_FMw4"><img src="https://img.youtube.com/vi/vVWFTl_FMw4/hqdefault.jpg"><div class="video-title">Watch</div></a></div>
+
+</div>
+
+<a class="button" href="https://youtube.com/@unfiltereddsumit">▶ Visit YouTube</a>
+
+</section>
+
+<!-- SOCIAL -->
+<section>
+<h2>Connect</h2>
+
+<div class="social">
+
+<a href="https://youtube.com/@unfiltereddsumit">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+</a>
+
+<a href="https://instagram.com/unfiltereddsumit">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+
+<a href="https://t.me/unfiltereddsumit">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a>
+
+<a href="mailto:sumitiitan58@gmail.com">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Unfiltered Sumit
+</footer>
+
+</body>
+</html>
