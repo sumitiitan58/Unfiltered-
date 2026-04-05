@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unfiltered Sumit</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(45deg, #ff0000, #ff4d4d);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+.menu {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+}
+
+/* FULL WIDTH SECTIONS */
+section {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+/* CONTENT CENTER */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    border-left: 5px solid red;
+    padding-left: 10px;
+}
+
+/* OWNER */
+.owner {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.owner img {
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid red;
+}
+
+/* VIDEO GRID */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.video-card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-card img {
+    width: 100%;
+}
+
+.video-title {
+    padding: 10px;
+}
+
+/* SOCIAL */
+.social a img {
+    width: 35px;
+    margin: 10px;
+}
+
+/* BUTTON */
+.button {
+    display: inline-block;
+    background: red;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Videos</a>
+<a href="#">Contact</a>
+</div>
+
+<!-- HEADER -->
+<header>
+<div class="left">
+<img src="profile.png">
+<h2>Unfiltered Sumit</h2>
+</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- ABOUT -->
+<section>
+<div class="container">
+<h2>About Channel</h2>
+<p>
+Welcome to Unfiltered Sumit!  
+We share real facts, hidden truths, and engaging stories in a simple and entertaining way.
+</p>
+</div>
+</section>
+
+<!-- OWNER -->
+<section>
+<div class="container">
+<h2>👤 About Owner</h2>
+
+<div class="owner">
+<img src="profile.png">
+<div>
+<h3>Sumit Kumar</h3>
+<p>
+I am the creator of Unfiltered Sumit. My mission is to present reality, facts, and awareness content in a simple and engaging way.
+</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- VIDEOS -->
+<section>
+<div class="container">
+<h2>🔥 My Videos</h2>
+
+<div class="video-grid">
+
+<!-- VIDEO CARDS -->
+<div class="video-card">
+<a href="https://youtu.be/vVWFTl_FMw4" target="_blank">
+<img src="https://img.youtube.com/vi/vVWFTl_FMw4/hqdefault.jpg">
+<div class="video-title">Watch Video</div>
+</a>
+</div>
+
+<div class="video-card">
+<a href="https://youtu.be/UzDTLF3yUQY" target="_blank">
+<img src="https://img.youtube.com/vi/UzDTLF3yUQY/hqdefault.jpg">
+<div class="video-title">Watch Video</div>
+</a>
+</div>
+
+<div class="video-card">
+<a href="https://youtu.be/-2SzvAXrVSk" target="_blank">
+<img src="https://img.youtube.com/vi/-2SzvAXrVSk/hqdefault.jpg">
+<div class="video-title">Watch Video</div>
+</a>
+</div>
+
+<div class="video-card">
+<a href="https://youtu.be/sqjittzc1m4" target="_blank">
+<img src="https://img.youtube.com/vi/sqjittzc1m4/hqdefault.jpg">
+<div class="video-title">Watch Video</div>
+</a>
+</div>
+
+</div>
+
+<a class="button" href="https://youtube.com/@unfiltereddsumit" target="_blank">
+▶ Visit YouTube Channel
+</a>
+
+</div>
+</section>
+
+<!-- SOCIAL -->
+<section>
+<div class="container">
+<h2>Connect With Me</h2>
+
+<div class="social">
+
+<!-- YOUTUBE -->
+<a href="https://youtube.com/@unfiltereddsumit" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://instagram.com/unfiltereddsumit" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+
+<!-- TELEGRAM -->
+<a href="https://t.me/unfiltereddsumit" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a>
+
+</div>
+
+<p>Email: sumitiitan58@gmail.com</p>
+
+</div>
+</section>
+
+<footer>
+© 2026 Unfiltered Sumit
+</footer>
+
+<script>
+function toggleMenu() {
+let sidebar = document.getElementById("sidebar");
+sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+}
+</script>
+
+</body>
+</html>
