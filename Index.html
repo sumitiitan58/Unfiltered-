@@ -1,162 +1,1778 @@
-SKM
-prepskm.in JEE MAIN 2027
-60-Day Planner • Daily To-Do • Weightage & Approx Marks
-🔥 0d Streak
-Target: --d left
-Speed
-            1.0x
-            1.25x
-            1.5x
-            1.75x
-            2.0x
-          
-Today's To-Do Weightage & Difficulty 60-Day Planner 78 Manzil Lectures Watch-Time & Stats Mock Tracker Focus & Backup
-Approx. Expected Score Max Cap ~272
-~0 / 300
-Phy ~0 • Chem ~0 • Math ~0
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>prepskm.in — 60-Day JEE Main 2027 Planner, To-Do &amp; Weightage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .tab-btn.active { background-color: #4f46e5; color: #ffffff; box-shadow: 0 2px 8px rgba(79,70,229,0.28); }
+    .dark .tab-btn.active { background-color: #6366f1; color: #ffffff; }
+    .mobile-nav-btn.active { color: #4f46e5; }
+    .dark .mobile-nav-btn.active { color: #818cf8; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-200 overflow-x-hidden">
 
-Today's To-Do
-0 / 0 0%
+  <!-- Top Sticky Header -->
+  <header class="sticky top-0 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-600 flex items-center justify-center text-white font-extrabold text-xs shadow-sm shrink-0">
+          SKM
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white truncate">prepskm<span class="text-indigo-600 dark:text-indigo-400">.in</span></span>
+            <span class="hidden sm:inline-block text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">JEE MAIN 2027</span>
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">60-Day Planner &bull; Daily To-Do &bull; Weightage &amp; Approx Marks</p>
+        </div>
+      </div>
 
-Days & Lectures
-0 / 60 0/78 Lecs
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div id="streak-pill" class="text-[11px] sm:text-xs font-extrabold px-2.5 py-1.5 rounded-lg bg-orange-50 text-orange-700 dark:bg-orange-950/60 dark:text-orange-300 border border-orange-200 dark:border-orange-900" title="Consecutive Study Days">
+          &#128293; <span id="streak-count">0</span>d <span class="hidden sm:inline">Streak</span>
+        </div>
+                <div id="countdown-pill" class="text-[11px] sm:text-xs font-bold px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-900">
+          <span class="hidden sm:inline">Target: </span><span id="countdown-days">--</span>d left
+        </div>
 
-Remaining (1.0x) & PYQs
-501h 43m 0 PYQs
-Target: 8.36 hrs/day
-Weekly Schedule (Aaj Se Start)
-Pick your start date and click any day in the week to load its Lecture, Practice & Revision plan.
-Start: ← Week 1 →
+        <label class="flex items-center gap-1 text-[11px] sm:text-xs font-semibold bg-slate-100 dark:bg-slate-800 px-2 sm:px-2.5 py-1.5 rounded-lg">
+          <span class="text-slate-500 dark:text-slate-400 hidden sm:inline">Speed</span>
+          <select id="global-speed" class="bg-transparent font-bold text-indigo-600 dark:text-indigo-400 focus:outline-none cursor-pointer">
+            <option value="1">1.0x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="1.75">1.75x</option>
+            <option value="2">2.0x</option>
+          </select>
+        </label>
 
-Day 01 To-Do List
-Tick Lecture, Question Practice, or Revision tasks below — your Approx. Marks at the top updates live.
-+ Load Next Day Tasks Clear Completed
-Task Title
-Chapter (for Weightage)
-Task Type
-            Lecture
-            Question Practice
-            Revision
-          
-+ Add Task
-All Tasks Lecture Question Practice Revision
+        <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
+          <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </div>
 
-JEE Main 2027 Chapter Weightage & Difficulty Analysis
-Researched NTA weightage (normalized to 100 marks/subject) & Easy / Medium / Hard tags. Tick Lecture, Practice, and Revision to update Approx. Marks.
-              All Subjects
-              Physics (100m)
-              Chemistry (100m)
-              Maths (100m)
-            
-              All Difficulty
-              Easy
-              Medium
-              Hard
-            
-              Highest Weightage First
-              Easy & High ROI First
-            
-EASY CHAPTERS
--- Marks
-High accuracy (~90% capture)
-MEDIUM CHAPTERS
--- Marks
-Balanced ROI (~82% capture)
-HARD CHAPTERS
--- Marks
-Tougher (~70% capture)
+    <!-- Desktop Navigation Tabs -->
+    <nav class="hidden md:flex max-w-7xl mx-auto px-6 pb-2.5 items-center gap-1.5 overflow-x-auto no-scrollbar">
+      <button type="button" data-tab="todo" class="tab-btn active whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Today's To-Do</button>
+      <button type="button" data-tab="weightage" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Weightage &amp; Difficulty</button>
+      <button type="button" data-tab="planner" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">60-Day Planner</button>
+      <button type="button" data-tab="lectures" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">78 Manzil Lectures</button>
+      <button type="button" data-tab="analytics" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Watch-Time &amp; Stats</button>
+      <button type="button" data-tab="mocks" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Mock Tracker</button>
+      <button type="button" data-tab="tools" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Focus &amp; Backup</button>
+    </nav>
+  </header>
 
-            All (1–60)
-            Days 1–10
-            Days 11–20
-            Days 21–30
-            Days 31–40
-            Days 41–50
-            Days 51–60
-          
-            All Subjects
-            Physics
-            Chemistry
-            Maths
-            Mock Tests
-          
-            All Status
-            Pending
-            Completed
-          
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6 pb-24 md:pb-8 space-y-5">
 
-All (78) Physics (23) Chemistry (26) Mathematics (29)
-            All
-            Unwatched
-            Watched
-          
+    <!-- Top KPI Strip with Live Approx Expected Marks -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+      <!-- Live Approx Marks Card -->
+      <div class="col-span-2 lg:col-span-1 bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-600 text-white rounded-2xl p-4 shadow-md">
+        <div class="flex items-center justify-between">
+          <span class="text-[11px] font-bold uppercase tracking-wider opacity-90">Approx. Expected Score</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/20">Max Cap ~272</span>
+        </div>
+        <div class="mt-1.5 flex items-baseline gap-1.5">
+          <span id="kpi-approx-marks" class="text-3xl font-extrabold">~0</span>
+          <span class="text-sm font-bold opacity-80">/ 300</span>
+        </div>
+        <div id="kpi-approx-split" class="mt-1 text-[11px] opacity-90">Phy ~0 &bull; Chem ~0 &bull; Math ~0</div>
+        <div class="mt-2 w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
+          <div id="kpi-approx-bar" class="h-full bg-amber-300 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
 
-1x Normal Speed (PDF Summary)
-20d 21h 43m 14s
-Daily Target across 60 days: 8.36 hours/day
-1.5x Speed (Recommended)
-13d 22h 28m 49s
-Daily Target across 60 days: 5.57 hours/day
-2x Speed (Fast Revision)
-10d 10h 51m 37s
-Daily Target across 60 days: 4.18 hours/day
-Physics (23 Lectures)
-1x: 7d 15h 53m 00s
-1.5x: 5d 02h 35m 20s • 2x: 3d 19h 56m 30s
-0 / 23 watched
-Chemistry (26 Lectures)
-1x: 6d 07h 44m 33s
-1.5x: 4d 05h 09m 42s • 2x: 3d 03h 52m 16s
-0 / 26 watched
-Mathematics (29 Lectures)
-1x: 6d 22h 05m 41s
-1.5x: 4d 14h 43m 47s • 2x: 3d 11h 02m 50s
-0 / 29 watched
-Subject Completion Progress (%)
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] sm:text-xs font-medium text-slate-500 dark:text-slate-400">Today's To-Do</div>
+        <div class="mt-1 flex items-baseline justify-between">
+          <span id="kpi-todo" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">0 / 0</span>
+          <span id="kpi-todo-pct" class="text-xs font-bold text-indigo-600 dark:text-indigo-400">0%</span>
+        </div>
+        <div class="mt-2 w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+          <div id="kpi-todo-bar" class="h-full bg-indigo-600 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
 
-Total Video Hours by Subject (1x)
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] sm:text-xs font-medium text-slate-500 dark:text-slate-400">Days &amp; Lectures</div>
+        <div class="mt-1 flex items-baseline justify-between">
+          <span id="kpi-days" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">0 / 60</span>
+          <span id="kpi-lectures" class="text-xs font-bold text-emerald-600 dark:text-emerald-400">0/78 Lecs</span>
+        </div>
+        <div class="mt-2 w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+          <div id="kpi-days-bar" class="h-full bg-emerald-600 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
 
-Syllabus Mastery: Lecture vs Practice vs Revision (%)
+      <div class="col-span-2 lg:col-span-1 bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-[11px] sm:text-xs font-medium text-slate-500 dark:text-slate-400">Remaining (<span id="kpi-speed-label">1.0x</span>) &amp; PYQs</div>
+        <div class="mt-1 flex items-baseline justify-between gap-2">
+          <span id="kpi-remaining-time" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">501h 43m</span>
+          <span id="kpi-pyqs" class="text-xs font-bold text-amber-600 dark:text-amber-400">0 PYQs</span>
+        </div>
+        <div id="kpi-daily-target" class="mt-1 text-[11px] text-slate-500 dark:text-slate-400 truncate">Target: 8.36 hrs/day</div>
+      </div>
+    </section>
 
-Difficulty-Wise Completion (Easy / Medium / Hard %)
+    <!-- TAB 1: TODAY'S TO-DO LIST -->
+    <section id="tab-todo" class="space-y-4">
+      <!-- 7-Day Weekly Schedule Strip -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-sm sm:text-base font-extrabold">Weekly Schedule (Aaj Se Start)</h2>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Pick your start date and click any day in the week to load its Lecture, Practice &amp; Revision plan.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="flex items-center gap-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-800 px-2.5 py-1.5 rounded-lg">
+              <span class="text-slate-500">Start:</span>
+              <input id="plan-start-date" type="date" class="bg-transparent font-bold text-indigo-600 dark:text-indigo-400 focus:outline-none" />
+            </label>
+            <button id="week-prev-btn" type="button" class="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold">&larr;</button>
+            <span id="week-label" class="text-xs font-extrabold px-2">Week 1</span>
+            <button id="week-next-btn" type="button" class="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold">&rarr;</button>
+          </div>
+        </div>
+        <div id="weekly-strip" class="flex overflow-x-auto snap-x no-scrollbar gap-2 pb-1 sm:grid sm:grid-cols-4 lg:grid-cols-7 sm:overflow-visible"></div>
+      </div>
 
-Log Mock Test Score (/300)
-Test Name
-              Day 10 — Test + Analysis
-              Day 20 — Test + Analysis
-              Day 30 — Test + Analysis
-              Day 40 — Test + Analysis
-              Day 50 — Test + Analysis
-              Day 60 — Final Mock + Analysis
-              Custom Full Syllabus Mock
-            
-Physics
-Chem
-Maths
-Mistakes / Error Analysis
-Save Mock Score
-Mock Score Progression
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h1 id="todo-day-heading" class="text-base sm:text-lg font-extrabold">Day 01 To-Do List</h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Tick Lecture, Question Practice, or Revision tasks below — your Approx. Marks at the top updates live.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="todo-sync-day-btn" type="button" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition shadow-sm">+ Load Next Day Tasks</button>
+          <button id="todo-clear-done-btn" type="button" class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold transition">Clear Completed</button>
+        </div>
+      </div>
 
+      <!-- Add Custom To-Do Form -->
+      <form id="todo-form" class="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-12 gap-2.5 items-end">
+        <div class="sm:col-span-4">
+          <label class="block text-[11px] font-bold text-slate-500 mb-1">Task Title</label>
+          <input id="todo-title" type="text" required placeholder="e.g. Solve 40 PYQs of Electrostatics" class="w-full text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div class="sm:col-span-3">
+          <label class="block text-[11px] font-bold text-slate-500 mb-1">Chapter (for Weightage)</label>
+          <select id="todo-chapter" class="w-full text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 rounded-xl px-2.5 py-2 focus:outline-none"></select>
+        </div>
+        <div class="sm:col-span-3">
+          <label class="block text-[11px] font-bold text-slate-500 mb-1">Task Type</label>
+          <select id="todo-type" class="w-full text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 rounded-xl px-2.5 py-2 focus:outline-none">
+            <option value="lecture">Lecture</option>
+            <option value="practice">Question Practice</option>
+            <option value="revision">Revision</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <button type="submit" class="w-full py-2 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold transition">+ Add Task</button>
+        </div>
+      </form>
 
-JEE Deep-Work Timer
-Sound: ON
-50:00
-25m Sprint 50m Lecture 90m PYQ Block 3h Mock
-Start Reset
-Completed Focus Sessions: 0
-Settings & Progress Backup
-JEE Main 2027 Target Date
-Export Progress (JSON) Import Progress (JSON)
-Reset All Progress Saved locally in browser
-To-Do Weightage 60-Day Lectures Stats Focus
-Day Details
-×
+      <!-- Filter Pills -->
+      <div class="flex flex-wrap items-center gap-1.5">
+        <button type="button" data-todo-filter="all" class="todo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white">All Tasks</button>
+        <button type="button" data-todo-filter="lecture" class="todo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">Lecture</button>
+        <button type="button" data-todo-filter="practice" class="todo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">Question Practice</button>
+        <button type="button" data-todo-filter="revision" class="todo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">Revision</button>
+      </div>
 
-PYQs Solved Today
-Revision Notes / Key Formulas / Traps
-Cancel Save
-Reset All Progress?
-This will clear all checked days, To-Do items, chapter progress, watched lectures, PYQ counts, and mock scores on this browser.
-Cancel Yes, Reset
+      <div id="todo-list" class="space-y-2.5"></div>
+    </section>
 
+    <!-- TAB 2: WEIGHTAGE & DIFFICULTY RESEARCH SECTION -->
+    <section id="tab-weightage" class="hidden space-y-4">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 space-y-3">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <h2 class="text-base sm:text-lg font-extrabold">JEE Main 2027 Chapter Weightage &amp; Difficulty Analysis</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Researched NTA weightage (normalized to 100 marks/subject) &amp; Easy / Medium / Hard tags. Tick Lecture, Practice, and Revision to update Approx. Marks.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <select id="wt-subject" class="text-xs font-bold bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+              <option value="all">All Subjects</option>
+              <option value="PHYSICS">Physics (100m)</option>
+              <option value="CHEMISTRY">Chemistry (100m)</option>
+              <option value="MATHS">Maths (100m)</option>
+            </select>
+            <select id="wt-diff" class="text-xs font-bold bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+              <option value="all">All Difficulty</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+            <select id="wt-sort" class="text-xs font-bold bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+              <option value="marks-desc">Highest Weightage First</option>
+              <option value="easy-first">Easy &amp; High ROI First</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Difficulty Summary Strip -->
+        <div class="grid grid-cols-3 gap-2.5 pt-2">
+          <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900">
+            <div class="text-[11px] font-bold text-emerald-700 dark:text-emerald-300">EASY CHAPTERS</div>
+            <div id="wt-easy-summary" class="text-sm sm:text-base font-extrabold mt-0.5">-- Marks</div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400">High accuracy (~90% capture)</div>
+          </div>
+          <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900">
+            <div class="text-[11px] font-bold text-amber-700 dark:text-amber-300">MEDIUM CHAPTERS</div>
+            <div id="wt-med-summary" class="text-sm sm:text-base font-extrabold mt-0.5">-- Marks</div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400">Balanced ROI (~82% capture)</div>
+          </div>
+          <div class="p-3 rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900">
+            <div class="text-[11px] font-bold text-red-700 dark:text-red-300">HARD CHAPTERS</div>
+            <div id="wt-hard-summary" class="text-sm sm:text-base font-extrabold mt-0.5">-- Marks</div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400">Tougher (~70% capture)</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="weightage-list" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+    </section>
+
+    <!-- TAB 3: 60-DAY PLANNER -->
+    <section id="tab-planner" class="hidden space-y-3.5">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center gap-2.5 justify-between">
+        <div class="grid grid-cols-3 sm:flex sm:flex-wrap items-center gap-2">
+          <select id="planner-block" class="text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+            <option value="all">All (1–60)</option>
+            <option value="1-10">Days 1–10</option>
+            <option value="11-20">Days 11–20</option>
+            <option value="21-30">Days 21–30</option>
+            <option value="31-40">Days 31–40</option>
+            <option value="41-50">Days 41–50</option>
+            <option value="51-60">Days 51–60</option>
+          </select>
+          <select id="planner-subject" class="text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+            <option value="all">All Subjects</option>
+            <option value="PHYSICS">Physics</option>
+            <option value="CHEMISTRY">Chemistry</option>
+            <option value="MATHS">Maths</option>
+            <option value="TEST">Mock Tests</option>
+          </select>
+          <select id="planner-status" class="text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+            <option value="all">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="done">Completed</option>
+          </select>
+        </div>
+        <input id="planner-search" type="search" placeholder="Search chapter or day..." class="w-full sm:w-64 text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <div id="planner-list" class="space-y-2.5"></div>
+    </section>
+
+    <!-- TAB 4: 78 MANZIL LECTURES -->
+    <section id="tab-lectures" class="hidden space-y-3.5">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row md:items-center gap-3 justify-between">
+        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <button type="button" data-lec-subj="all" class="lec-subj-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white">All (78)</button>
+          <button type="button" data-lec-subj="PHYSICS" class="lec-subj-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Physics (23)</button>
+          <button type="button" data-lec-subj="CHEMISTRY" class="lec-subj-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Chemistry (26)</button>
+          <button type="button" data-lec-subj="MATHEMATICS" class="lec-subj-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Mathematics (29)</button>
+        </div>
+        <div class="flex items-center gap-2 w-full md:w-auto">
+          <select id="lec-status-filter" class="text-xs font-medium bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none">
+            <option value="all">All</option>
+            <option value="pending">Unwatched</option>
+            <option value="done">Watched</option>
+          </select>
+          <input id="lec-search" type="search" placeholder="Search lecture title..." class="flex-1 sm:w-60 text-xs sm:text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+      </div>
+
+      <div id="lectures-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+    </section>
+
+    <!-- TAB 5: WATCH-TIME & ANALYTICS -->
+    <section id="tab-analytics" class="hidden space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-400">1x Normal Speed (PDF Summary)</div>
+          <div class="mt-2 text-2xl font-extrabold text-slate-900 dark:text-white">20d 21h 43m 14s</div>
+          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Daily Target across 60 days: <strong class="text-slate-700 dark:text-slate-200">8.36 hours/day</strong></p>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold uppercase tracking-wider text-indigo-500">1.5x Speed (Recommended)</div>
+          <div class="mt-2 text-2xl font-extrabold text-slate-900 dark:text-white">13d 22h 28m 49s</div>
+          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Daily Target across 60 days: <strong class="text-slate-700 dark:text-slate-200">5.57 hours/day</strong></p>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-500">2x Speed (Fast Revision)</div>
+          <div class="mt-2 text-2xl font-extrabold text-slate-900 dark:text-white">10d 10h 51m 37s</div>
+          <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Daily Target across 60 days: <strong class="text-slate-700 dark:text-slate-200">4.18 hours/day</strong></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+        <div class="rounded-2xl p-5 bg-red-600 text-white shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider opacity-90">Physics (23 Lectures)</div>
+          <div class="mt-2 text-lg font-extrabold">1x: 7d 15h 53m 00s</div>
+          <div class="text-xs opacity-90 mt-1">1.5x: 5d 02h 35m 20s &bull; 2x: 3d 19h 56m 30s</div>
+          <div id="prog-phy-text" class="mt-3 text-xs font-bold bg-white/20 inline-block px-2.5 py-1 rounded-lg">0 / 23 watched</div>
+        </div>
+        <div class="rounded-2xl p-5 bg-emerald-600 text-white shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider opacity-90">Chemistry (26 Lectures)</div>
+          <div class="mt-2 text-lg font-extrabold">1x: 6d 07h 44m 33s</div>
+          <div class="text-xs opacity-90 mt-1">1.5x: 4d 05h 09m 42s &bull; 2x: 3d 03h 52m 16s</div>
+          <div id="prog-chem-text" class="mt-3 text-xs font-bold bg-white/20 inline-block px-2.5 py-1 rounded-lg">0 / 26 watched</div>
+        </div>
+        <div class="rounded-2xl p-5 bg-blue-600 text-white shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider opacity-90">Mathematics (29 Lectures)</div>
+          <div class="mt-2 text-lg font-extrabold">1x: 6d 22h 05m 41s</div>
+          <div class="text-xs opacity-90 mt-1">1.5x: 4d 14h 43m 47s &bull; 2x: 3d 11h 02m 50s</div>
+          <div id="prog-math-text" class="mt-3 text-xs font-bold bg-white/20 inline-block px-2.5 py-1 rounded-lg">0 / 29 watched</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold mb-3">Subject Completion Progress (%)</h3>
+          <div class="relative h-64 sm:h-72"><canvas id="chart-subject-progress"></canvas></div>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold mb-3">Total Video Hours by Subject (1x)</h3>
+          <div class="relative h-64 sm:h-72"><canvas id="chart-watch-share"></canvas></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold mb-3">Syllabus Mastery: Lecture vs Practice vs Revision (%)</h3>
+          <div class="relative h-64 sm:h-72"><canvas id="chart-pillar-progress"></canvas></div>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold mb-3">Difficulty-Wise Completion (Easy / Medium / Hard %)</h3>
+          <div class="relative h-64 sm:h-72"><canvas id="chart-diff-mastery"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: MOCK TEST TRACKER -->
+    <section id="tab-mocks" class="hidden space-y-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <form id="mock-form" class="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 space-y-3">
+          <h3 class="text-sm font-bold">Log Mock Test Score (/300)</h3>
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Test Name</label>
+            <select id="mock-label" class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none">
+              <option value="Day 10 — Test + Analysis">Day 10 — Test + Analysis</option>
+              <option value="Day 20 — Test + Analysis">Day 20 — Test + Analysis</option>
+              <option value="Day 30 — Test + Analysis">Day 30 — Test + Analysis</option>
+              <option value="Day 40 — Test + Analysis">Day 40 — Test + Analysis</option>
+              <option value="Day 50 — Test + Analysis">Day 50 — Test + Analysis</option>
+              <option value="Day 60 — Final Mock + Analysis">Day 60 — Final Mock + Analysis</option>
+              <option value="Custom Full Syllabus Mock">Custom Full Syllabus Mock</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <label class="block text-xs font-semibold text-red-500 mb-1">Physics</label>
+              <input id="mock-phy" type="number" min="0" max="100" required placeholder="0-100" class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-emerald-500 mb-1">Chem</label>
+              <input id="mock-chem" type="number" min="0" max="100" required placeholder="0-100" class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-blue-500 mb-1">Maths</label>
+              <input id="mock-math" type="number" min="0" max="100" required placeholder="0-100" class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-2.5 py-2 focus:outline-none" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">Mistakes / Error Analysis</label>
+            <textarea id="mock-notes" rows="2" placeholder="Silly mistakes, weak chapters, time management..." class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition">Save Mock Score</button>
+        </form>
+
+        <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800">
+          <h3 class="text-sm font-bold mb-3">Mock Score Progression</h3>
+          <div class="relative h-60 sm:h-64"><canvas id="chart-mock-trend"></canvas></div>
+        </div>
+      </div>
+
+      <div id="mock-list" class="space-y-2.5"></div>
+    </section>
+
+    <!-- TAB 7: FOCUS TIMER & BACKUP -->
+    <section id="tab-tools" class="hidden space-y-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 flex flex-col items-center text-center">
+          <div class="flex items-center justify-between w-full mb-4">
+            <h3 class="text-sm font-bold">JEE Deep-Work Timer</h3>
+            <button id="mute-toggle" type="button" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800">Sound: ON</button>
+          </div>
+          <div id="timer-display" class="text-5xl sm:text-6xl font-extrabold tracking-tight text-indigo-600 dark:text-indigo-400 my-4">50:00</div>
+          <div class="flex flex-wrap justify-center items-center gap-2 mb-5">
+            <button type="button" data-preset="25" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/40">25m Sprint</button>
+            <button type="button" data-preset="50" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300">50m Lecture</button>
+            <button type="button" data-preset="90" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/40">90m PYQ Block</button>
+            <button type="button" data-preset="180" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/40">3h Mock</button>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="timer-start" type="button" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition">Start</button>
+            <button id="timer-reset" type="button" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-sm font-bold transition">Reset</button>
+          </div>
+          <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">Completed Focus Sessions: <strong id="timer-sessions" class="text-slate-800 dark:text-slate-200">0</strong></p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4">
+          <h3 class="text-sm font-bold">Settings &amp; Progress Backup</h3>
+          <div>
+            <label class="block text-xs font-semibold text-slate-500 mb-1">JEE Main 2027 Target Date</label>
+            <input id="exam-date-input" type="date" class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none" />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+            <button id="export-btn" type="button" class="py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition">Export Progress (JSON)</button>
+            <label class="py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-center text-xs font-bold cursor-pointer transition">
+              Import Progress (JSON)
+              <input id="import-input" type="file" accept="application/json" class="hidden" />
+            </label>
+          </div>
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <button id="reset-open-btn" type="button" class="text-xs font-bold text-red-600 hover:text-red-700">Reset All Progress</button>
+            <span class="text-[11px] text-slate-400">Saved locally in browser</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 grid grid-cols-6 py-1.5 px-1">
+    <button type="button" data-tab="todo" class="mobile-nav-btn active flex flex-col items-center justify-center py-1 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      To-Do
+    </button>
+    <button type="button" data-tab="weightage" class="mobile-nav-btn flex flex-col items-center justify-center py-1 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+      Weightage
+    </button>
+    <button type="button" data-tab="planner" class="mobile-nav-btn flex flex-col items-center justify-center py-1 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      60-Day
+    </button>
+    <button type="button" data-tab="lectures" class="mobile-nav-btn flex flex-col items-center justify-center py-1 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Lectures
+    </button>
+    <button type="button" data-tab="analytics" class="mobile-nav-btn flex flex-col items-center justify-center py-1 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      Stats
+    </button>
+    <button type="button" data-tab="tools" class="mobile-nav-btn flex flex-col items-center justify-center py-1 text-[10px] font-bold text-slate-500 dark:text-slate-400">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Focus
+    </button>
+  </nav>
+
+  <!-- Day Notes & PYQ Modal -->
+  <div id="day-modal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-lg w-full p-5 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 id="modal-day-title" class="text-base font-extrabold">Day Details</h3>
+        <button id="modal-close" type="button" class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500">&times;</button>
+      </div>
+      <div id="modal-day-topics" class="text-xs text-slate-600 dark:text-slate-300 space-y-1"></div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-500 mb-1">PYQs Solved Today</label>
+        <input id="modal-pyqs" type="number" min="0" max="500" class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none" />
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-500 mb-1">Revision Notes / Key Formulas / Traps</label>
+        <textarea id="modal-notes" rows="4" placeholder="Write key formulas, mistakes, or NCERT points for this day..." class="w-full text-sm bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 focus:outline-none"></textarea>
+      </div>
+      <div class="flex justify-end gap-2">
+        <button id="modal-cancel" type="button" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold">Cancel</button>
+        <button id="modal-save" type="button" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset Confirmation Modal -->
+  <div id="reset-modal" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-sm w-full p-5 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+      <h3 class="text-base font-extrabold text-red-600">Reset All Progress?</h3>
+      <p class="text-xs text-slate-600 dark:text-slate-300">This will clear all checked days, To-Do items, chapter progress, watched lectures, PYQ counts, and mock scores on this browser.</p>
+      <div class="flex justify-end gap-2">
+        <button id="reset-cancel" type="button" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold">Cancel</button>
+        <button id="reset-confirm" type="button" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold">Yes, Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-20 md:bottom-5 right-4 z-50 hidden px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-lg"></div>
+
+  <script>
+    // Researched JEE Main 2027 Chapter-Wise Weightage (100 marks/subject = 300 total) & Difficulty
+    const CHAPTER_WEIGHTAGE = [
+      // Physics (sum = 100)
+      { id: "p_units", sub: "PHYSICS", ch: "Basic Maths + Units & Errors", marks: 5, diff: "Easy", tip: "Dimensional analysis & error formulas = free 4 marks." },
+      { id: "p_kin1", sub: "PHYSICS", ch: "Kinematics 1D", marks: 4, diff: "Easy", tip: "Graphs & relative motion equations." },
+      { id: "p_kin2", sub: "PHYSICS", ch: "Kinematics 2D", marks: 4, diff: "Medium", tip: "Projectile & river-boat problems." },
+      { id: "p_nlm", sub: "PHYSICS", ch: "Laws of Motion", marks: 5, diff: "Medium", tip: "FBD, friction & circular banking." },
+      { id: "p_wep", sub: "PHYSICS", ch: "Work, Power & Energy", marks: 4, diff: "Medium", tip: "Work-energy theorem & vertical circular motion." },
+      { id: "p_com", sub: "PHYSICS", ch: "COM + Momentum + Collisions", marks: 4, diff: "Medium", tip: "Momentum conservation & coefficient of restitution." },
+      { id: "p_rot", sub: "PHYSICS", ch: "Rotational Motion", marks: 8, diff: "Hard", tip: "MOI, rolling & angular momentum conservation." },
+      { id: "p_grav", sub: "PHYSICS", ch: "Gravitation", marks: 5, diff: "Easy", tip: "Orbital velocity, escape speed & g variation." },
+      { id: "p_solids", sub: "PHYSICS", ch: "Solids + Fluid Mechanics", marks: 5, diff: "Medium", tip: "Bernoulli, surface tension & Young's modulus." },
+      { id: "p_osc", sub: "PHYSICS", ch: "Oscillations", marks: 3, diff: "Medium", tip: "SHM time period & spring combinations." },
+      { id: "p_waves", sub: "PHYSICS", ch: "Waves", marks: 2, diff: "Medium", tip: "Organ pipes & Doppler effect." },
+      { id: "p_elec", sub: "PHYSICS", ch: "Electrostatics", marks: 6, diff: "Medium", tip: "Gauss law, dipole & electric potential." },
+      { id: "p_cap", sub: "PHYSICS", ch: "Capacitance", marks: 3, diff: "Medium", tip: "Dielectric insertion & RC circuits." },
+      { id: "p_curr", sub: "PHYSICS", ch: "Current Electricity", marks: 8, diff: "Medium", tip: "Kirchhoff, Wheatstone & meter bridge." },
+      { id: "p_mag", sub: "PHYSICS", ch: "Moving Charges & Magnetism", marks: 6, diff: "Medium", tip: "Biot-Savart, Ampere law & Lorentz force." },
+      { id: "p_magmat", sub: "PHYSICS", ch: "Magnetic Properties of Matter", marks: 2, diff: "Easy", tip: "Dia, para, ferro & Curie's law." },
+      { id: "p_emi", sub: "PHYSICS", ch: "Electromagnetic Induction", marks: 4, diff: "Hard", tip: "Faraday's law, motional EMF & self-inductance." },
+      { id: "p_ac", sub: "PHYSICS", ch: "Alternating Current", marks: 4, diff: "Easy", tip: "LCR resonance, power factor & transformer." },
+      { id: "p_emw", sub: "PHYSICS", ch: "Electromagnetic Waves", marks: 3, diff: "Easy", tip: "EM spectrum & E/B ratio." },
+      { id: "p_ray", sub: "PHYSICS", ch: "Ray Optics", marks: 5, diff: "Medium", tip: "Lens maker, prism & optical instruments." },
+      { id: "p_waveopt", sub: "PHYSICS", ch: "Wave Optics", marks: 4, diff: "Easy", tip: "YDSE fringe width & polarization." },
+      { id: "p_mod", sub: "PHYSICS", ch: "Modern Physics", marks: 8, diff: "Easy", tip: "Photoelectric effect, Bohr model & nuclear decay." },
+      { id: "p_semi", sub: "PHYSICS", ch: "Semiconductors", marks: 4, diff: "Easy", tip: "Logic gates & Zener diode = guaranteed marks." },
+      { id: "p_therm", sub: "PHYSICS", ch: "Thermal Physics / KTG", marks: 8, diff: "Easy", tip: "1st law, Carnot efficiency & RMS speed." },
+
+      // Chemistry (sum = 100)
+      { id: "c_mole", sub: "CHEMISTRY", ch: "Mole Concept", marks: 5, diff: "Easy", tip: "Stoichiometry, limiting reagent & molarity." },
+      { id: "c_atom", sub: "CHEMISTRY", ch: "Atomic Structure", marks: 4, diff: "Easy", tip: "Quantum numbers, de Broglie & Bohr radius." },
+      { id: "c_per", sub: "CHEMISTRY", ch: "Periodic Classification", marks: 4, diff: "Easy", tip: "IE, EA & electronegativity trends." },
+      { id: "c_bond", sub: "CHEMISTRY", ch: "Chemical Bonding", marks: 8, diff: "Easy", tip: "VSEPR, hybridization & MOT bond order." },
+      { id: "c_therm", sub: "CHEMISTRY", ch: "Chemical Thermodynamics", marks: 6, diff: "Medium", tip: "ΔH, ΔG, entropy & Hess's law." },
+      { id: "c_chemeq", sub: "CHEMISTRY", ch: "Chemical Equilibrium", marks: 4, diff: "Medium", tip: "Kp-Kc relation & Le Chatelier principle." },
+      { id: "c_iupac", sub: "CHEMISTRY", ch: "IUPAC Nomenclature", marks: 3, diff: "Easy", tip: "Functional group priority & numbering." },
+      { id: "c_ion", sub: "CHEMISTRY", ch: "Ionic Equilibrium", marks: 4, diff: "Hard", tip: "pH of buffers, Ksp & salt hydrolysis." },
+      { id: "c_goc", sub: "CHEMISTRY", ch: "GOC + Isomerism", marks: 8, diff: "Medium", tip: "Inductive, resonance, hyperconjugation & acidity." },
+      { id: "c_hydro", sub: "CHEMISTRY", ch: "Hydrocarbons", marks: 4, diff: "Medium", tip: "Ozonolysis, Markovnikov & aromaticity." },
+      { id: "c_redox", sub: "CHEMISTRY", ch: "Redox Reactions", marks: 3, diff: "Easy", tip: "Oxidation number & n-factor balancing." },
+      { id: "c_sol", sub: "CHEMISTRY", ch: "Solutions", marks: 4, diff: "Easy", tip: "Raoult's law & colligative properties." },
+      { id: "c_echem", sub: "CHEMISTRY", ch: "Electrochemistry", marks: 5, diff: "Medium", tip: "Nernst equation, Kohlrausch & Faraday laws." },
+      { id: "c_kin", sub: "CHEMISTRY", ch: "Chemical Kinetics", marks: 5, diff: "Easy", tip: "1st order half-life & Arrhenius equation." },
+      { id: "c_pblk", sub: "CHEMISTRY", ch: "p-Block Elements", marks: 5, diff: "Medium", tip: "NCERT oxyacids & Group 13–18 trends." },
+      { id: "c_dfblk", sub: "CHEMISTRY", ch: "d- and f-Block", marks: 5, diff: "Easy", tip: "KMnO₄/K₂Cr₂O₇, magnetic moment & lanthanoids." },
+      { id: "c_coord", sub: "CHEMISTRY", ch: "Coordination Compounds", marks: 7, diff: "Easy", tip: "CFT, magnetic nature & isomerism." },
+      { id: "c_halo", sub: "CHEMISTRY", ch: "Haloalkanes & Haloarenes", marks: 3, diff: "Medium", tip: "SN1/SN2 & E1/E2 stereochemistry." },
+      { id: "c_alc", sub: "CHEMISTRY", ch: "Alcohols, Phenols & Ethers", marks: 4, diff: "Medium", tip: "Reimer-Tiemann, Kolbe & Lucas test." },
+      { id: "c_ald", sub: "CHEMISTRY", ch: "Aldehydes, Ketones & Acids", marks: 5, diff: "Hard", tip: "Aldol, Cannizzaro & Grignard reactions." },
+      { id: "c_amine", sub: "CHEMISTRY", ch: "Amines", marks: 3, diff: "Medium", tip: "Basicity order, Hofmann & diazonium salts." },
+      { id: "c_bio", sub: "CHEMISTRY", ch: "Biomolecules", marks: 4, diff: "Easy", tip: "Carbohydrates, amino acids & vitamins (NCERT)." },
+      { id: "c_qual", sub: "CHEMISTRY", ch: "Qualitative Analysis / NCERT", marks: 3, diff: "Medium", tip: "Salt analysis & Organic POC tests." },
+
+      // Maths (sum = 100)
+      { id: "m_sets", sub: "MATHS", ch: "Sets (Basics)", marks: 3, diff: "Easy", tip: "Venn diagrams & number of subsets." },
+      { id: "m_trig", sub: "MATHS", ch: "Trigonometry + Equations", marks: 4, diff: "Medium", tip: "Identities & general solutions." },
+      { id: "m_quad", sub: "MATHS", ch: "Quadratic Equations", marks: 4, diff: "Medium", tip: "Location of roots & Newton's formula." },
+      { id: "m_rel", sub: "MATHS", ch: "Relations & Functions", marks: 5, diff: "Medium", tip: "Domain, range, one-one/onto & equivalence." },
+      { id: "m_seq", sub: "MATHS", ch: "Sequences & Series", marks: 5, diff: "Medium", tip: "AP/GP, AM-GM inequality & telescoping sum." },
+      { id: "m_bin", sub: "MATHS", ch: "Binomial Theorem", marks: 4, diff: "Medium", tip: "General term, remainder & middle term." },
+      { id: "m_pnc", sub: "MATHS", ch: "Permutations & Combinations", marks: 4, diff: "Hard", tip: "Distribution, rank & circular arrangements." },
+      { id: "m_str", sub: "MATHS", ch: "Straight Lines", marks: 3, diff: "Medium", tip: "Image, foot of perpendicular & family of lines." },
+      { id: "m_circ", sub: "MATHS", ch: "Circles", marks: 4, diff: "Medium", tip: "Tangents, radical axis & chord of contact." },
+      { id: "m_para", sub: "MATHS", ch: "Parabola", marks: 3, diff: "Medium", tip: "Focal chord & tangent in parametric form." },
+      { id: "m_ell", sub: "MATHS", ch: "Ellipse", marks: 3, diff: "Medium", tip: "Eccentricity & auxiliary circle." },
+      { id: "m_hyp", sub: "MATHS", ch: "Hyperbola", marks: 2, diff: "Hard", tip: "Rectangular hyperbola & asymptotes." },
+      { id: "m_mat", sub: "MATHS", ch: "Matrices", marks: 5, diff: "Easy", tip: "Adjoint, inverse & characteristic equation." },
+      { id: "m_det", sub: "MATHS", ch: "Determinants", marks: 4, diff: "Easy", tip: "Cramer's rule & system of linear equations." },
+      { id: "m_comp", sub: "MATHS", ch: "Complex Numbers", marks: 4, diff: "Hard", tip: "Euler form, cube roots of unity & geometry." },
+      { id: "m_lim", sub: "MATHS", ch: "Limits", marks: 4, diff: "Easy", tip: "L'Hopital, standard expansions & 1^∞ form." },
+      { id: "m_cont", sub: "MATHS", ch: "Continuity & Differentiability", marks: 4, diff: "Medium", tip: "Piecewise continuity & differentiability checks." },
+      { id: "m_aod", sub: "MATHS", ch: "Applications of Derivatives", marks: 5, diff: "Hard", tip: "Maxima/minima, monotonicity & Rolle's theorem." },
+      { id: "m_indef", sub: "MATHS", ch: "Indefinite Integration", marks: 3, diff: "Hard", tip: "Substitution & integration by parts." },
+      { id: "m_def", sub: "MATHS", ch: "Definite Integration", marks: 6, diff: "Hard", tip: "King's property, Newton-Leibniz & summation." },
+      { id: "m_auc", sub: "MATHS", ch: "Area Under Curves", marks: 3, diff: "Medium", tip: "Area between standard curves." },
+      { id: "m_de", sub: "MATHS", ch: "Differential Equations", marks: 5, diff: "Medium", tip: "Linear DE (integrating factor) & exact forms." },
+      { id: "m_vec", sub: "MATHS", ch: "Vectors", marks: 5, diff: "Easy", tip: "Dot, cross, STP & VTP." },
+      { id: "m_3d", sub: "MATHS", ch: "3D Geometry", marks: 6, diff: "Easy", tip: "Shortest distance between skew lines & image." },
+      { id: "m_prob", sub: "MATHS", ch: "Probability", marks: 4, diff: "Hard", tip: "Bayes' theorem & binomial distribution." },
+      { id: "m_stat", sub: "MATHS", ch: "Statistics", marks: 3, diff: "Easy", tip: "Mean & variance formulas = sure-shot 4 marks." },
+      { id: "m_itf", sub: "MATHS", ch: "Inverse Trigonometry", marks: 3, diff: "Medium", tip: "Principal value range & tan⁻¹ identities." }
+    ];
+
+    const DAYS_DATA = [
+      { day: 1, s1Sub: "PHYSICS", s1Topic: "Basic Maths + Units & Errors", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 2, s1Sub: "CHEMISTRY", s1Topic: "Mole Concept", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 3, s1Sub: "MATHS", s1Topic: "Sets (Basics)", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 4, s1Sub: "PHYSICS", s1Topic: "Kinematics 1D", s2Sub: "CHEMISTRY", s2Topic: "Atomic Structure" },
+      { day: 5, s1Sub: "MATHS", s1Topic: "Trigonometry + Equations", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 6, s1Sub: "PHYSICS", s1Topic: "Kinematics 2D", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 7, s1Sub: "CHEMISTRY", s1Topic: "Periodic Classification", s2Sub: "MATHS", s2Topic: "Quadratic Equations" },
+      { day: 8, s1Sub: "PHYSICS", s1Topic: "Laws of Motion", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 9, s1Sub: "CHEMISTRY", s1Topic: "Chemical Bonding", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 10, s1Sub: "TEST", s1Topic: "TEST + ANALYSIS", s2Sub: "TEST", s2Topic: "Block 1 Assessment" },
+      { day: 11, s1Sub: "MATHS", s1Topic: "Relations & Functions", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 12, s1Sub: "MATHS", s1Topic: "Sequences & Series", s2Sub: "PHYSICS", s2Topic: "Work, Power & Energy" },
+      { day: 13, s1Sub: "MATHS", s1Topic: "Binomial Theorem", s2Sub: "PHYSICS", s2Topic: "COM + Momentum + Collisions" },
+      { day: 14, s1Sub: "PHYSICS", s1Topic: "Rotational Motion", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 15, s1Sub: "CHEMISTRY", s1Topic: "Chemical Thermodynamics", s2Sub: "MATHS", s2Topic: "Permutations & Combinations" },
+      { day: 16, s1Sub: "PHYSICS", s1Topic: "MOI & Rotation (Advanced)", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 17, s1Sub: "CHEMISTRY", s1Topic: "Chemical Equilibrium", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 18, s1Sub: "MATHS", s1Topic: "Straight Lines", s2Sub: "CHEMISTRY", s2Topic: "IUPAC Nomenclature" },
+      { day: 19, s1Sub: "CHEMISTRY", s1Topic: "Ionic Equilibrium", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 20, s1Sub: "TEST", s1Topic: "TEST + ANALYSIS", s2Sub: "TEST", s2Topic: "Block 2 Assessment" },
+      { day: 21, s1Sub: "CHEMISTRY", s1Topic: "GOC + Isomerism", s2Sub: "CHEMISTRY", s2Topic: "Hydrocarbons" },
+      { day: 22, s1Sub: "PHYSICS", s1Topic: "Gravitation", s2Sub: "PHYSICS", s2Topic: "Solids + Fluid Mechanics" },
+      { day: 23, s1Sub: "CHEMISTRY", s1Topic: "Redox Reactions", s2Sub: "MATHS", s2Topic: "Circles" },
+      { day: 24, s1Sub: "PHYSICS", s1Topic: "Oscillations", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 25, s1Sub: "CHEMISTRY", s1Topic: "Solutions", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 26, s1Sub: "MATHS", s1Topic: "Parabola", s2Sub: "PHYSICS", s2Topic: "Waves" },
+      { day: 27, s1Sub: "CHEMISTRY", s1Topic: "Electrochemistry", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 28, s1Sub: "MATHS", s1Topic: "Ellipse", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 29, s1Sub: "PHYSICS", s1Topic: "Electrostatics", s2Sub: "CHEMISTRY", s2Topic: "Chemical Kinetics" },
+      { day: 30, s1Sub: "TEST", s1Topic: "TEST + ANALYSIS", s2Sub: "TEST", s2Topic: "Block 3 Assessment" },
+      { day: 31, s1Sub: "MATHS", s1Topic: "Hyperbola", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 32, s1Sub: "MATHS", s1Topic: "Matrices", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 33, s1Sub: "PHYSICS", s1Topic: "Capacitance", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 34, s1Sub: "CHEMISTRY", s1Topic: "p-Block Elements", s2Sub: "MATHS", s2Topic: "Determinants" },
+      { day: 35, s1Sub: "PHYSICS", s1Topic: "Current Electricity", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 36, s1Sub: "MATHS", s1Topic: "Complex Numbers", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 37, s1Sub: "PHYSICS", s1Topic: "Moving Charges & Magnetism", s2Sub: "CHEMISTRY", s2Topic: "d- and f-Block" },
+      { day: 38, s1Sub: "CHEMISTRY", s1Topic: "Coordination Compounds", s2Sub: "PHYSICS", s2Topic: "Magnetic Properties of Matter" },
+      { day: 39, s1Sub: "MATHS", s1Topic: "Limits", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 40, s1Sub: "TEST", s1Topic: "TEST + ANALYSIS", s2Sub: "TEST", s2Topic: "Block 4 Assessment" },
+      { day: 41, s1Sub: "PHYSICS", s1Topic: "Electromagnetic Induction", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 42, s1Sub: "CHEMISTRY", s1Topic: "Haloalkanes & Haloarenes", s2Sub: "MATHS", s2Topic: "Continuity & Differentiability" },
+      { day: 43, s1Sub: "PHYSICS", s1Topic: "Alternating Current", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 44, s1Sub: "CHEMISTRY", s1Topic: "Alcohols, Phenols & Ethers", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 45, s1Sub: "MATHS", s1Topic: "Applications of Derivatives", s2Sub: "PHYSICS", s2Topic: "Electromagnetic Waves" },
+      { day: 46, s1Sub: "CHEMISTRY", s1Topic: "Aldehydes, Ketones & Acids", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 47, s1Sub: "MATHS", s1Topic: "Indefinite Integration", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 48, s1Sub: "PHYSICS", s1Topic: "Ray Optics", s2Sub: "CHEMISTRY", s2Topic: "Amines" },
+      { day: 49, s1Sub: "MATHS", s1Topic: "Definite Integration", s2Sub: "MATHS", s2Topic: "Area Under Curves" },
+      { day: 50, s1Sub: "TEST", s1Topic: "TEST + ANALYSIS", s2Sub: "TEST", s2Topic: "Block 5 Assessment" },
+      { day: 51, s1Sub: "PHYSICS", s1Topic: "Wave Optics", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 52, s1Sub: "CHEMISTRY", s1Topic: "Biomolecules", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 53, s1Sub: "MATHS", s1Topic: "Differential Equations", s2Sub: "PHYSICS", s2Topic: "Modern Physics" },
+      { day: 54, s1Sub: "MATHS", s1Topic: "Vectors", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 55, s1Sub: "MATHS", s1Topic: "3D Geometry", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 56, s1Sub: "MATHS", s1Topic: "Probability", s2Sub: "PHYSICS", s2Topic: "Semiconductors" },
+      { day: 57, s1Sub: "MATHS", s1Topic: "Statistics", s2Sub: "REVISION", s2Topic: "PYQs + REVISION" },
+      { day: 58, s1Sub: "CHEMISTRY", s1Topic: "Qualitative Analysis / NCERT", s2Sub: "CHEMISTRY", s2Topic: "Organic Purification (POC)" },
+      { day: 59, s1Sub: "PHYSICS", s1Topic: "Thermal Physics / KTG", s2Sub: "MATHS", s2Topic: "Inverse Trigonometry" },
+      { day: 60, s1Sub: "TEST", s1Topic: "FINAL MOCK + ANALYSIS", s2Sub: "TEST", s2Topic: "Full JEE Main Simulation" }
+    ];
+
+    const LECTURES_DATA = [
+      { id: 0, day: 1, subject: "PHYSICS", title: "BASIC MATHEMATICS", tag: "One Shot Lecture", sec: 23820, url: "https://www.youtube.com/watch?v=2i0p2tidN88" },
+      { id: 1, day: 2, subject: "CHEMISTRY", title: "Mole Concept", tag: "One Shot Lecture", sec: 26580, url: "https://www.youtube.com/watch?v=upLME3ugsQo" },
+      { id: 2, day: 3, subject: "MATHEMATICS", title: "Sets", tag: "One Shot Lecture", sec: 12360, url: "https://www.youtube.com/watch?v=XYJyV48ijms" },
+      { id: 3, day: 4, subject: "PHYSICS", title: "MOTION IN A STRAIGHT LINE", tag: "One Shot Lecture", sec: 24600, url: "https://www.youtube.com/watch?v=v-kDOGM3214" },
+      { id: 4, day: 4, subject: "CHEMISTRY", title: "Atomic Structure", tag: "One Shot Lecture", sec: 22380, url: "https://www.youtube.com/watch?v=uMWwASLGsPs" },
+      { id: 5, day: 5, subject: "MATHEMATICS", title: "Trigonometry + Equations", tag: "One Shot Lecture", sec: 23400, url: "https://www.youtube.com/watch?v=0DgG7LxiYzk" },
+      { id: 6, day: 6, subject: "PHYSICS", title: "MOTION IN A PLANE", tag: "One Shot Lecture", sec: 29220, url: "https://www.youtube.com/watch?v=U-tlb7_vnhM" },
+      { id: 7, day: 7, subject: "CHEMISTRY", title: "Periodic Classification", tag: "One Shot Lecture", sec: 23250, url: "https://www.youtube.com/watch?v=nLE7_YBFQNQ" },
+      { id: 8, day: 7, subject: "MATHEMATICS", title: "Quadratic Equations", tag: "One Shot Lecture", sec: 22080, url: "https://www.youtube.com/watch?v=oF4E7Voy4Xk" },
+      { id: 9, day: 8, subject: "PHYSICS", title: "CIRCULAR MOTION", tag: "One Shot Lecture", sec: 19800, url: "https://www.youtube.com/watch?v=nsSeTLT3UF8" },
+      { id: 10, day: 8, subject: "PHYSICS", title: "LAWS OF MOTION", tag: "One Shot Lecture", sec: 16473, url: "https://www.youtube.com/watch?v=iwaCd0HfqBY" },
+      { id: 11, day: 9, subject: "CHEMISTRY", title: "Chemical Bonding", tag: "One Shot Lecture", sec: 34156, url: "https://www.youtube.com/watch?v=kS8s_WX0IlY" },
+      { id: 12, day: 11, subject: "MATHEMATICS", title: "Relations & Functions", tag: "One Shot Lecture", sec: 22500, url: "https://www.youtube.com/watch?v=NKth1h8pr7s" },
+      { id: 13, day: 12, subject: "PHYSICS", title: "WORK, ENERGY & POWER", tag: "One Shot Lecture", sec: 17633, url: "https://www.youtube.com/watch?v=lDa5ZWZOuT4" },
+      { id: 14, day: 12, subject: "MATHEMATICS", title: "Sequences & Series", tag: "One Shot Lecture", sec: 32580, url: "https://www.youtube.com/watch?v=wDzTxpOG9VI" },
+      { id: 15, day: 13, subject: "PHYSICS", title: "CENTRE OF MASS", tag: "One Shot Lecture", sec: 24300, url: "https://www.youtube.com/watch?v=7xy0V3FjxdY" },
+      { id: 16, day: 13, subject: "MATHEMATICS", title: "Binomial Theorem", tag: "One Shot Lecture", sec: 33120, url: "https://www.youtube.com/watch?v=PhD8oL6dPOY" },
+      { id: 17, day: 14, subject: "PHYSICS", title: "ROTATIONAL MOTION", tag: "One Shot Lecture", sec: 23887, url: "https://www.youtube.com/watch?v=p06331ToyhY" },
+      { id: 18, day: 15, subject: "CHEMISTRY", title: "Chemical Thermodynamics", tag: "One Shot Lecture", sec: 31678, url: "https://www.youtube.com/watch?v=NwCmoh7Vd9g" },
+      { id: 19, day: 15, subject: "MATHEMATICS", title: "Permutations & Combinations", tag: "One Shot Lecture", sec: 26820, url: "https://www.youtube.com/watch?v=Cq9SqJPC0Dk" },
+      { id: 20, day: 17, subject: "CHEMISTRY", title: "Chemical Equilibrium", tag: "One Shot Lecture", sec: 20580, url: "https://www.youtube.com/watch?v=cxbSjezLIZw" },
+      { id: 21, day: 18, subject: "CHEMISTRY", title: "IUPAC Nomenclature", tag: "One Shot Lecture", sec: 18660, url: "https://www.youtube.com/watch?v=qhdrxe-4Y_s" },
+      { id: 22, day: 18, subject: "MATHEMATICS", title: "Straight Lines", tag: "One Shot Lecture", sec: 37800, url: "https://www.youtube.com/watch?v=66QzVoimRUM" },
+      { id: 23, day: 19, subject: "CHEMISTRY", title: "Ionic Equilibrium", tag: "One Shot Lecture", sec: 21840, url: "https://www.youtube.com/watch?v=rH7LapTGFvQ" },
+      { id: 24, day: 21, subject: "CHEMISTRY", title: "GOC + Isomerism", tag: "Lecture 1 of 2", sec: 29940, url: "https://www.youtube.com/watch?v=HNRXUAvbkTY" },
+      { id: 25, day: 21, subject: "CHEMISTRY", title: "GOC + Isomerism", tag: "Lecture 2 of 2", sec: 29580, url: "https://www.youtube.com/watch?v=mRHa2Ww-c9Q" },
+      { id: 26, day: 21, subject: "CHEMISTRY", title: "Hydrocarbons", tag: "One Shot Lecture", sec: 28140, url: "https://www.youtube.com/watch?v=7jA1fFPT5Io" },
+      { id: 27, day: 22, subject: "PHYSICS", title: "GRAVITATION", tag: "One Shot Lecture", sec: 14027, url: "https://www.youtube.com/watch?v=wE0xrUuJLnk" },
+      { id: 28, day: 22, subject: "PHYSICS", title: "MECHANICAL PROPERTIES OF SOLIDS & FLUID", tag: "One Shot Lecture", sec: 37815, url: "https://www.youtube.com/watch?v=gziRcxMiO_Q" },
+      { id: 29, day: 23, subject: "CHEMISTRY", title: "Redox Reactions", tag: "One Shot Lecture", sec: 14340, url: "https://www.youtube.com/watch?v=Dt_88sinQCY" },
+      { id: 30, day: 23, subject: "MATHEMATICS", title: "Circles", tag: "One Shot Lecture", sec: 16841, url: "https://www.youtube.com/live/nf6EA9sLiwk" },
+      { id: 31, day: 24, subject: "PHYSICS", title: "OSCILLATIONS", tag: "One Shot Lecture", sec: 16200, url: "https://www.youtube.com/watch?v=bv8qBsHK9bM" },
+      { id: 32, day: 25, subject: "CHEMISTRY", title: "Solutions", tag: "One Shot Lecture", sec: 26837, url: "https://www.youtube.com/watch?v=f6ENSghG7T4" },
+      { id: 33, day: 26, subject: "PHYSICS", title: "WAVES", tag: "One Shot Lecture", sec: 16695, url: "https://www.youtube.com/watch?v=-RUX_OlLlWA" },
+      { id: 34, day: 26, subject: "MATHEMATICS", title: "Parabola", tag: "One Shot Lecture", sec: 19500, url: "https://www.youtube.com/watch?v=c424y7L9Sz8" },
+      { id: 35, day: 27, subject: "CHEMISTRY", title: "Electrochemistry", tag: "One Shot Lecture", sec: 28322, url: "https://www.youtube.com/watch?v=GplPceRaMi0" },
+      { id: 36, day: 28, subject: "MATHEMATICS", title: "Ellipse", tag: "One Shot Lecture", sec: 13800, url: "https://www.youtube.com/watch?v=7fSUkPxzWYY" },
+      { id: 37, day: 29, subject: "PHYSICS", title: "ELECTRIC CHARGES AND FIELDS", tag: "One Shot Lecture", sec: 41220, url: "https://www.youtube.com/watch?v=GLEZZdGwuXU" },
+      { id: 38, day: 29, subject: "PHYSICS", title: "ELECTRIC POTENTIAL, DIPOLE & CONDUCTOR", tag: "One Shot Lecture", sec: 25920, url: "https://www.youtube.com/watch?v=sGb3VLDvNRU" },
+      { id: 39, day: 29, subject: "CHEMISTRY", title: "Chemical Kinetics", tag: "One Shot Lecture", sec: 18300, url: "https://www.youtube.com/watch?v=Jt7Rlad12Yk" },
+      { id: 40, day: 31, subject: "MATHEMATICS", title: "Hyperbola", tag: "One Shot Lecture", sec: 10560, url: "https://www.youtube.com/watch?v=QS6vOMlhvsc" },
+      { id: 41, day: 32, subject: "MATHEMATICS", title: "Matrices", tag: "One Shot Lecture", sec: 35520, url: "https://www.youtube.com/watch?v=U0JLQdDT-j4" },
+      { id: 42, day: 33, subject: "PHYSICS", title: "CAPACITOR", tag: "One Shot Lecture", sec: 26340, url: "https://www.youtube.com/watch?v=EJJGEpGFzQs" },
+      { id: 43, day: 34, subject: "CHEMISTRY", title: "p-Block Elements", tag: "One Shot Lecture", sec: 19540, url: "https://www.youtube.com/watch?v=b0k5LOk_uPk" },
+      { id: 44, day: 34, subject: "MATHEMATICS", title: "Determinants", tag: "One Shot Lecture", sec: 25440, url: "https://www.youtube.com/watch?v=cPIPakSsSFI" },
+      { id: 45, day: 35, subject: "PHYSICS", title: "CURRENT ELECTRICITY", tag: "One Shot Lecture", sec: 33600, url: "https://www.youtube.com/watch?v=JY24andAvME" },
+      { id: 46, day: 36, subject: "MATHEMATICS", title: "Complex Numbers", tag: "One Shot Lecture", sec: 15060, url: "https://www.youtube.com/watch?v=sKwCHRS8zqA" },
+      { id: 47, day: 37, subject: "PHYSICS", title: "MAGNETISM", tag: "One Shot Lecture", sec: 34620, url: "https://www.youtube.com/watch?v=I4kB3onwjpw" },
+      { id: 48, day: 37, subject: "CHEMISTRY", title: "d- and f-Block", tag: "One Shot Lecture", sec: 22853, url: "https://www.youtube.com/watch?v=SjILQ6cX_Vo" },
+      { id: 49, day: 38, subject: "CHEMISTRY", title: "Coordination Compounds", tag: "One Shot Lecture", sec: 28050, url: "https://www.youtube.com/watch?v=5myJzBeN514" },
+      { id: 50, day: 39, subject: "MATHEMATICS", title: "Limits", tag: "One Shot Lecture", sec: 18180, url: "https://www.youtube.com/watch?v=WnIszkrdY8Q" },
+      { id: 51, day: 41, subject: "PHYSICS", title: "ELECTROMAGNETIC INDUCTION", tag: "One Shot Lecture", sec: 23700, url: "https://www.youtube.com/watch?v=_WXExQ4E-po" },
+      { id: 52, day: 42, subject: "CHEMISTRY", title: "Haloalkanes & Haloarenes", tag: "One Shot Lecture", sec: 23160, url: "https://www.youtube.com/watch?v=eZM4S9SPFR4" },
+      { id: 53, day: 42, subject: "MATHEMATICS", title: "Continuity & Differentiability", tag: "One Shot Lecture", sec: 20940, url: "https://www.youtube.com/watch?v=bLkVDkaJrTo" },
+      { id: 54, day: 43, subject: "PHYSICS", title: "ALTERNATING CURRENT", tag: "One Shot Lecture", sec: 26463, url: "https://www.youtube.com/watch?v=FImh-a0673s" },
+      { id: 55, day: 44, subject: "CHEMISTRY", title: "Alcohols, Phenols & Ethers", tag: "One Shot Lecture", sec: 26820, url: "https://www.youtube.com/watch?v=mBOFCVb3tSM" },
+      { id: 56, day: 45, subject: "PHYSICS", title: "ELECTROMAGNETIC WAVES", tag: "One Shot Lecture", sec: 10680, url: "https://www.youtube.com/watch?v=8TnzQkZrztQ" },
+      { id: 57, day: 45, subject: "MATHEMATICS", title: "Applications of Derivatives", tag: "One Shot Lecture", sec: 19980, url: "https://www.youtube.com/watch?v=jOVcucQLv38" },
+      { id: 58, day: 46, subject: "CHEMISTRY", title: "Aldehydes, Ketones & Acids", tag: "One Shot Lecture", sec: 25740, url: "https://www.youtube.com/watch?v=S0bcJDrZB64" },
+      { id: 59, day: 47, subject: "MATHEMATICS", title: "Indefinite Integration", tag: "One Shot Lecture", sec: 22260, url: "https://www.youtube.com/watch?v=2_kp6QCevxc" },
+      { id: 60, day: 48, subject: "PHYSICS", title: "OPTICS", tag: "One Shot Lecture", sec: 30042, url: "https://www.youtube.com/watch?v=72T8RfBU0ME" },
+      { id: 61, day: 48, subject: "CHEMISTRY", title: "Amines", tag: "One Shot Lecture", sec: 9900, url: "https://www.youtube.com/watch?v=X41GKSteurg" },
+      { id: 62, day: 49, subject: "MATHEMATICS", title: "Area Under Curves", tag: "One Shot Lecture", sec: 19800, url: "https://www.youtube.com/watch?v=AT9xxLnTzWA" },
+      { id: 63, day: 49, subject: "MATHEMATICS", title: "Definite Integration", tag: "One Shot Lecture", sec: 15840, url: "https://www.youtube.com/watch?v=ESHiTnsKLoE" },
+      { id: 64, day: 51, subject: "PHYSICS", title: "WAVE OPTICS", tag: "One Shot Lecture", sec: 18470, url: "https://www.youtube.com/watch?v=k8IyQgwDdUk" },
+      { id: 65, day: 52, subject: "CHEMISTRY", title: "Biomolecules", tag: "One Shot Lecture", sec: 11640, url: "https://www.youtube.com/watch?v=H7kPFFy8iyk" },
+      { id: 66, day: 53, subject: "PHYSICS", title: "MODERN PHYSICS", tag: "One Shot Lecture", sec: 38520, url: "https://www.youtube.com/watch?v=V76QPpoWVwA" },
+      { id: 67, day: 53, subject: "MATHEMATICS", title: "Differential Equations", tag: "One Shot Lecture", sec: 27420, url: "https://www.youtube.com/watch?v=YQ1Ix2FHlm0" },
+      { id: 68, day: 54, subject: "MATHEMATICS", title: "Vectors", tag: "One Shot Lecture", sec: 19920, url: "https://www.youtube.com/watch?v=Y4NAF7O1FfQ" },
+      { id: 69, day: 55, subject: "MATHEMATICS", title: "3D Geometry", tag: "One Shot Lecture", sec: 20580, url: "https://www.youtube.com/watch?v=VG2KogeWzIY" },
+      { id: 70, day: 56, subject: "PHYSICS", title: "SEMICONDUCTOR", tag: "One Shot Lecture", sec: 19080, url: "https://www.youtube.com/watch?v=rdnWOyqZTy4" },
+      { id: 71, day: 56, subject: "MATHEMATICS", title: "Probability", tag: "One Shot Lecture", sec: 27780, url: "https://www.youtube.com/watch?v=lWqcibMwKtk" },
+      { id: 72, day: 57, subject: "MATHEMATICS", title: "Statistics", tag: "One Shot Lecture", sec: 7860, url: "https://www.youtube.com/watch?v=njcdN_-XPqc" },
+      { id: 73, day: 58, subject: "CHEMISTRY", title: "Organic Purification (POC)", tag: "One Shot Lecture", sec: 14814, url: "https://www.youtube.com/watch?v=9ldKfnFH9L8" },
+      { id: 74, day: 58, subject: "CHEMISTRY", title: "Qualitative Analysis / NCERT", tag: "One Shot Lecture", sec: 14814, url: "https://www.youtube.com/watch?v=9ldKfnFH9L8" },
+      { id: 75, day: 59, subject: "PHYSICS", title: "KTG & THERMODYNAMICS", tag: "One Shot Lecture", sec: 30882, url: "https://www.youtube.com/watch?v=JAvi2K_DbbI" },
+      { id: 76, day: 59, subject: "PHYSICS", title: "THERMAL PROPERTIES OF MATTER", tag: "One Shot Lecture", sec: 14916, url: "https://www.youtube.com/watch?v=ARVNSC5Yc6Y" },
+      { id: 77, day: 59, subject: "MATHEMATICS", title: "Inverse Trigonometry", tag: "One Shot Lecture", sec: 30000, url: "https://www.youtube.com/watch?v=EaofiSDn8MM" }
+    ];
+
+    const STORAGE_KEY = "prepskm_v2";
+    let state = {
+      completedDays: {},
+      completedLectures: {},
+      pyqsByDay: {},
+      notesByDay: {},
+      chapterProgress: {}, // { chId: { lecture: bool, practice: bool, revision: bool } }
+      todos: [
+        { id: 1, day: 1, title: "Watch Basic Maths + Units & Errors One-Shot", chId: "p_units", type: "lecture", done: false },
+        { id: 2, day: 1, title: "Solve 30 PYQs of Units, Dimensions & Errors", chId: "p_units", type: "practice", done: false },
+        { id: 3, day: 1, title: "Revise Dimensional Formulas & Error Rules", chId: "p_units", type: "revision", done: false }
+      ],
+      mocks: [],
+      speed: 1,
+      examDate: "2027-01-22",
+      darkMode: false,
+      pomodoroSessions: 0,
+      planStartDate: new Date().toISOString().slice(0, 10),
+      activeWeek: 0,
+      selectedPlanDay: 1,
+      streakDates: []
+    };
+
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) state = { ...state, ...JSON.parse(saved) };
+    } catch (e) {}
+
+    function saveState() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function recordStreakToday() {
+      const today = new Date().toISOString().slice(0, 10);
+      if (!Array.isArray(state.streakDates)) state.streakDates = [];
+      if (!state.streakDates.includes(today)) state.streakDates.push(today);
+    }
+
+    function computeStreak() {
+      const dates = new Set(state.streakDates || []);
+      let streak = 0;
+      const d = new Date();
+      while (true) {
+        const iso = d.toISOString().slice(0, 10);
+        if (dates.has(iso)) {
+          streak++;
+          d.setDate(d.getDate() - 1);
+        } else if (streak === 0) {
+          // Allow yesterday if user hasn't checked anything yet today
+          d.setDate(d.getDate() - 1);
+          const yIso = d.toISOString().slice(0, 10);
+          if (dates.has(yIso)) {
+            streak++;
+            d.setDate(d.getDate() - 1);
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+      return streak;
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.remove("hidden");
+      clearTimeout(t._tid);
+      t._tid = setTimeout(() => t.classList.add("hidden"), 2500);
+    }
+
+    function fmtDur(totalSec) {
+      const s = Math.max(0, Math.round(totalSec));
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const sec = s % 60;
+      return `${h}h ${m}m ${sec}s`;
+    }
+
+    function fmtHoursShort(totalSec) {
+      const s = Math.max(0, Math.round(totalSec));
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      return `${h}h ${m}m`;
+    }
+
+    function subjBadge(subj) {
+      if (subj === "PHYSICS") return "bg-red-50 text-red-700 border-red-200 dark:bg-red-950/40 dark:text-red-300 dark:border-red-900";
+      if (subj === "CHEMISTRY") return "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-900";
+      if (subj === "MATHS" || subj === "MATHEMATICS") return "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-900";
+      if (subj === "TEST") return "bg-amber-50 text-amber-800 border-amber-300 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800";
+      return "bg-slate-100 text-slate-600 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700";
+    }
+
+    function diffBadge(diff) {
+      if (diff === "Easy") return "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300";
+      if (diff === "Medium") return "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300";
+      return "bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300";
+    }
+
+    function lecCardColors(subj) {
+      if (subj === "PHYSICS") return "bg-red-600";
+      if (subj === "CHEMISTRY") return "bg-emerald-600";
+      return "bg-blue-600";
+    }
+
+    // Theme
+    function applyTheme() {
+      document.documentElement.classList.toggle("dark", !!state.darkMode);
+      document.getElementById("icon-moon").classList.toggle("hidden", !!state.darkMode);
+      document.getElementById("icon-sun").classList.toggle("hidden", !state.darkMode);
+    }
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      state.darkMode = !state.darkMode;
+      saveState();
+      applyTheme();
+      renderCharts();
+    });
+
+    // Countdown
+    function updateCountdown() {
+      const target = new Date(state.examDate + "T09:00:00");
+      const now = new Date();
+      const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+      document.getElementById("countdown-days").textContent = isNaN(diff) ? "--" : Math.max(0, diff);
+      document.getElementById("exam-date-input").value = state.examDate;
+    }
+
+    document.getElementById("exam-date-input").addEventListener("change", (e) => {
+      if (e.target.value) {
+        state.examDate = e.target.value;
+        saveState();
+        updateCountdown();
+        showToast("Target exam date updated");
+      }
+    });
+
+    // Global Speed
+    const speedSel = document.getElementById("global-speed");
+    speedSel.value = String(state.speed);
+    speedSel.addEventListener("change", (e) => {
+      state.speed = parseFloat(e.target.value) || 1;
+      saveState();
+      renderAll();
+    });
+
+    // Unified Tab Switcher
+    function switchTab(target) {
+      document.querySelectorAll(".tab-btn, .mobile-nav-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.tab === target);
+      });
+      ["todo", "weightage", "planner", "lectures", "analytics", "mocks", "tools"].forEach((id) => {
+        document.getElementById("tab-" + id).classList.toggle("hidden", id !== target);
+      });
+      if (target === "analytics" || target === "mocks") renderCharts();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.querySelectorAll(".tab-btn, .mobile-nav-btn").forEach((btn) => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+
+    // Approximate Marks Calculation (Never reaches 300/300; capped realistically around ~272)
+    function computeApproxMarks() {
+      const capByDiff = { Easy: 0.90, Medium: 0.82, Hard: 0.70 };
+      const subjScores = { PHYSICS: 0, CHEMISTRY: 0, MATHS: 0 };
+
+      CHAPTER_WEIGHTAGE.forEach((c) => {
+        const p = state.chapterProgress[c.id] || {};
+        // Also count completed To-Do items for that chapter
+        const todoMatch = state.todos.filter((t) => t.chId === c.id && t.done);
+        const hasLec = !!p.lecture || todoMatch.some((t) => t.type === "lecture");
+        const hasPrac = !!p.practice || todoMatch.some((t) => t.type === "practice");
+        const hasRev = !!p.revision || todoMatch.some((t) => t.type === "revision");
+
+        const ratio = (hasLec ? 0.35 : 0) + (hasPrac ? 0.40 : 0) + (hasRev ? 0.25 : 0);
+        const earned = c.marks * ratio * capByDiff[c.diff];
+        subjScores[c.sub] += earned;
+      });
+
+      // Cap each subject at 92 and total at 272 so it NEVER displays 300/300
+      const phy = Math.min(92, Math.round(subjScores.PHYSICS));
+      const chem = Math.min(92, Math.round(subjScores.CHEMISTRY));
+      const math = Math.min(88, Math.round(subjScores.MATHS));
+      const total = Math.min(272, phy + chem + math);
+      return { total, phy, chem, math };
+    }
+
+    // KPIs
+    function renderKPIs() {
+      document.getElementById("streak-count").textContent = computeStreak();
+      const approx = computeApproxMarks();
+      document.getElementById("kpi-approx-marks").textContent = `~${approx.total}`;
+      document.getElementById("kpi-approx-split").textContent = `Phy ~${approx.phy} • Chem ~${approx.chem} • Math ~${approx.math}`;
+      document.getElementById("kpi-approx-bar").style.width = `${Math.round((approx.total / 300) * 100)}%`;
+
+      const dayTodos = state.todos.filter((t) => (t.day || 1) === (state.selectedPlanDay || 1));
+      const todoTotal = dayTodos.length;
+      const todoDone = dayTodos.filter((t) => t.done).length;
+      const todoPct = todoTotal > 0 ? Math.round((todoDone / todoTotal) * 100) : 0;
+      document.getElementById("kpi-todo").textContent = `${todoDone} / ${todoTotal}`;
+      document.getElementById("kpi-todo-pct").textContent = `${todoPct}%`;
+      document.getElementById("kpi-todo-bar").style.width = `${todoPct}%`;
+
+      const doneDays = DAYS_DATA.filter((d) => state.completedDays[d.day]).length;
+      const doneLecs = LECTURES_DATA.filter((l) => state.completedLectures[l.id]).length;
+      document.getElementById("kpi-days").textContent = `${doneDays} / 60`;
+      document.getElementById("kpi-lectures").textContent = `${doneLecs}/78 Lecs`;
+      document.getElementById("kpi-days-bar").style.width = `${Math.round((doneDays / 60) * 100)}%`;
+
+      const remSec1x = LECTURES_DATA.reduce((acc, l) => acc + (state.completedLectures[l.id] ? 0 : l.sec), 0);
+      const remSecSpeed = remSec1x / state.speed;
+      const remDays = Math.max(1, 60 - doneDays);
+      const dailyTargetHrs = (remSecSpeed / 3600) / remDays;
+      const totalPyqs = Object.values(state.pyqsByDay).reduce((a, b) => a + (parseInt(b, 10) || 0), 0);
+
+      document.getElementById("kpi-speed-label").textContent = `${state.speed}x`;
+      document.getElementById("kpi-remaining-time").textContent = fmtHoursShort(remSecSpeed);
+      document.getElementById("kpi-daily-target").textContent = `Target: ${dailyTargetHrs.toFixed(2)} hrs/day (${remDays}d left)`;
+      document.getElementById("kpi-pyqs").textContent = `${totalPyqs} PYQs`;
+
+      const phyDone = LECTURES_DATA.filter((l) => l.subject === "PHYSICS" && state.completedLectures[l.id]).length;
+      const chemDone = LECTURES_DATA.filter((l) => l.subject === "CHEMISTRY" && state.completedLectures[l.id]).length;
+      const mathDone = LECTURES_DATA.filter((l) => l.subject === "MATHEMATICS" && state.completedLectures[l.id]).length;
+      document.getElementById("prog-phy-text").textContent = `${phyDone} / 23 watched`;
+      document.getElementById("prog-chem-text").textContent = `${chemDone} / 26 watched`;
+      document.getElementById("prog-math-text").textContent = `${mathDone} / 29 watched`;
+    }
+
+    // Populate Chapter Select in To-Do Form
+    function populateTodoChapters() {
+      const sel = document.getElementById("todo-chapter");
+      sel.innerHTML = CHAPTER_WEIGHTAGE.map((c) => `<option value="${c.id}">${c.sub}: ${c.ch} (~${c.marks}m, ${c.diff})</option>`).join("");
+    }
+
+    // To-Do Render & Logic
+    let activeTodoFilter = "all";
+    document.querySelectorAll(".todo-filter-btn").forEach((b) => {
+      b.addEventListener("click", () => {
+        activeTodoFilter = b.dataset.todoFilter;
+        document.querySelectorAll(".todo-filter-btn").forEach((x) => {
+          const act = x === b;
+          x.className = `todo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold ${act ? "bg-indigo-600 text-white" : "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300"}`;
+        });
+        renderTodo();
+      });
+    });
+
+    function ensureDayTodos(dNum) {
+      const hasAny = state.todos.some((t) => (t.day || 1) === dNum);
+      if (hasAny) return;
+      const dayObj = DAYS_DATA.find((x) => x.day === dNum);
+      if (!dayObj) return;
+      if (dayObj.s1Sub === "TEST") {
+        state.todos.push({ id: Date.now() + dNum, day: dNum, title: `Day ${dNum}: ${dayObj.s1Topic} (${dayObj.s2Topic})`, chId: "", type: "practice", done: false });
+      } else {
+        const chObj = CHAPTER_WEIGHTAGE.find((c) => c.ch === dayObj.s1Topic);
+        const chId = chObj ? chObj.id : "p_units";
+        const base = Date.now() + dNum * 10;
+        state.todos.push(
+          { id: base + 1, day: dNum, title: `Lecture: ${dayObj.s1Topic}`, chId, type: "lecture", done: false },
+          { id: base + 2, day: dNum, title: `Question Practice: 35 PYQs (${dayObj.s1Topic})`, chId, type: "practice", done: false },
+          { id: base + 3, day: dNum, title: `Revision: ${dayObj.s2Sub === "REVISION" ? dayObj.s1Topic + " Short Notes" : dayObj.s2Topic}`, chId, type: "revision", done: false }
+        );
+      }
+      saveState();
+    }
+
+    function renderTodo() {
+      const selDay = state.selectedPlanDay || 1;
+      const baseDate = new Date((state.planStartDate || new Date().toISOString().slice(0, 10)) + "T00:00:00");
+      const dt = new Date(baseDate);
+      dt.setDate(baseDate.getDate() + (selDay - 1));
+      const dateStr = dt.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
+      document.getElementById("todo-day-heading").textContent = `Day ${String(selDay).padStart(2, "0")} To-Do (${dateStr})`;
+
+      const box = document.getElementById("todo-list");
+      const list = state.todos.filter((t) => (t.day || 1) === selDay && (activeTodoFilter === "all" || t.type === activeTodoFilter));
+      if (list.length === 0) {
+        box.innerHTML = `<div class="bg-white dark:bg-slate-900 rounded-2xl p-8 text-center text-xs text-slate-500 border border-slate-200 dark:border-slate-800">No tasks here yet. Click <strong>+ Load Next Day Tasks</strong> or add a custom task above!</div>`;
+        return;
+      }
+
+      const typeBadge = {
+        lecture: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300",
+        practice: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
+        revision: "bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300"
+      };
+      const typeLabel = { lecture: "LECTURE", practice: "QUESTION PRACTICE", revision: "REVISION" };
+
+      box.innerHTML = list.map((t) => {
+        const ch = CHAPTER_WEIGHTAGE.find((c) => c.id === t.chId);
+        return `
+          <div class="bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border ${t.done ? "border-emerald-300 dark:border-emerald-800/70 bg-emerald-50/20 dark:bg-emerald-950/10" : "border-slate-200 dark:border-slate-800"} flex items-center justify-between gap-3 shadow-sm">
+            <label class="flex items-start sm:items-center gap-3 flex-1 min-w-0 cursor-pointer">
+              <input type="checkbox" data-todo-id="${t.id}" ${t.done ? "checked" : ""} class="todo-check mt-0.5 sm:mt-0 w-5 h-5 accent-indigo-600 rounded shrink-0 cursor-pointer" />
+              <div class="min-w-0">
+                <div class="text-xs sm:text-sm font-bold ${t.done ? "line-through text-slate-400" : "text-slate-900 dark:text-white"}">${t.title}</div>
+                <div class="flex flex-wrap items-center gap-1.5 mt-1">
+                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md ${typeBadge[t.type]}">${typeLabel[t.type]}</span>
+                  ${ch ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-md border ${subjBadge(ch.sub)}">${ch.ch} (~${ch.marks}m • ${ch.diff})</span>` : ""}
+                </div>
+              </div>
+            </label>
+            <button type="button" data-del-todo="${t.id}" class="del-todo text-xs font-bold text-red-500 hover:text-red-600 px-2 py-1">Delete</button>
+          </div>
+        `;
+      }).join("");
+    }
+
+    document.getElementById("todo-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const title = document.getElementById("todo-title").value.trim();
+      const chId = document.getElementById("todo-chapter").value;
+      const type = document.getElementById("todo-type").value;
+      if (!title) return;
+      state.todos.unshift({ id: Date.now(), day: state.selectedPlanDay || 1, title, chId, type, done: false });
+      saveState();
+      e.target.reset();
+      renderKPIs();
+      renderWeeklyStrip();
+      renderTodo();
+      showToast("Task added to Today's To-Do!");
+    });
+
+    function renderWeeklyStrip() {
+      const startInput = document.getElementById("plan-start-date");
+      if (!state.planStartDate) state.planStartDate = new Date().toISOString().slice(0, 10);
+      startInput.value = state.planStartDate;
+
+      const weekIdx = Math.max(0, Math.min(8, state.activeWeek || 0));
+      state.activeWeek = weekIdx;
+      const startDay = weekIdx * 7 + 1;
+      const endDay = Math.min(60, startDay + 6);
+      document.getElementById("week-label").textContent = `Week ${weekIdx + 1} (Days ${startDay}–${endDay})`;
+
+      const baseDate = new Date(state.planStartDate + "T00:00:00");
+      const cards = [];
+      for (let dNum = startDay; dNum <= endDay; dNum++) {
+        const dayObj = DAYS_DATA.find((x) => x.day === dNum);
+        const dt = new Date(baseDate);
+        dt.setDate(baseDate.getDate() + (dNum - 1));
+        const dateStr = dt.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
+        const done = !!state.completedDays[dNum];
+        const isSel = state.selectedPlanDay === dNum;
+        cards.push(`
+          <button type="button" data-week-day="${dNum}" class="week-day-btn snap-start shrink-0 w-32 sm:w-auto text-left p-2.5 rounded-xl border transition ${isSel ? "border-indigo-600 bg-indigo-50 dark:bg-indigo-950/50 ring-2 ring-indigo-300 dark:ring-indigo-800" : done ? "border-emerald-300 bg-emerald-50/40 dark:border-emerald-800 dark:bg-emerald-950/20" : "border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 hover:border-indigo-300"}">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+              <span class="text-slate-500 dark:text-slate-400">${dateStr}</span>
+              ${done ? `<span class="text-emerald-600 font-extrabold">&#10003;</span>` : ""}
+            </div>
+            <div class="mt-1 text-xs font-extrabold text-indigo-600 dark:text-indigo-400">DAY ${String(dNum).padStart(2, "0")}</div>
+            <div class="mt-0.5 text-[11px] font-semibold text-slate-800 dark:text-slate-200 truncate">${dayObj ? dayObj.s1Topic : ""}</div>
+          </button>
+        `);
+      }
+      document.getElementById("weekly-strip").innerHTML = cards.join("");
+    }
+
+    document.getElementById("plan-start-date").addEventListener("change", (e) => {
+      if (e.target.value) {
+        state.planStartDate = e.target.value;
+        saveState();
+        renderWeeklyStrip();
+        showToast("Weekly start date updated");
+      }
+    });
+    document.getElementById("week-prev-btn").addEventListener("click", () => {
+      if (state.activeWeek > 0) { state.activeWeek--; saveState(); renderWeeklyStrip(); }
+    });
+    document.getElementById("week-next-btn").addEventListener("click", () => {
+      if (state.activeWeek < 8) { state.activeWeek++; saveState(); renderWeeklyStrip(); }
+    });
+
+    document.addEventListener("click", (e) => {
+      const wBtn = e.target.closest(".week-day-btn");
+      if (!wBtn) return;
+      const dNum = Number(wBtn.dataset.weekDay);
+      state.selectedPlanDay = dNum;
+      ensureDayTodos(dNum);
+      saveState();
+      renderKPIs();
+      renderWeeklyStrip();
+      renderTodo();
+    });
+
+    document.getElementById("todo-sync-day-btn").addEventListener("click", () => {
+      const dNum = state.selectedPlanDay || 1;
+      state.todos = state.todos.filter((t) => (t.day || 1) !== dNum);
+      ensureDayTodos(dNum);
+      saveState();
+      renderKPIs();
+      renderTodo();
+      showToast(`Refreshed Day ${dNum} Lecture, Practice & Revision!`);
+    });
+
+    document.getElementById("todo-clear-done-btn").addEventListener("click", () => {
+      state.todos = state.todos.filter((t) => !t.done);
+      saveState();
+      renderKPIs();
+      renderTodo();
+      showToast("Cleared completed tasks");
+    });
+
+    // Weightage & Difficulty Render
+    function renderWeightage() {
+      const subj = document.getElementById("wt-subject").value;
+      const diff = document.getElementById("wt-diff").value;
+      const sort = document.getElementById("wt-sort").value;
+
+      const easyTotal = CHAPTER_WEIGHTAGE.filter((c) => c.diff === "Easy").reduce((a, b) => a + b.marks, 0);
+      const medTotal = CHAPTER_WEIGHTAGE.filter((c) => c.diff === "Medium").reduce((a, b) => a + b.marks, 0);
+      const hardTotal = CHAPTER_WEIGHTAGE.filter((c) => c.diff === "Hard").reduce((a, b) => a + b.marks, 0);
+      document.getElementById("wt-easy-summary").textContent = `${easyTotal} / 300 Marks`;
+      document.getElementById("wt-med-summary").textContent = `${medTotal} / 300 Marks`;
+      document.getElementById("wt-hard-summary").textContent = `${hardTotal} / 300 Marks`;
+
+      let list = CHAPTER_WEIGHTAGE.filter((c) => {
+        if (subj !== "all" && c.sub !== subj) return false;
+        if (diff !== "all" && c.diff !== diff) return false;
+        return true;
+      });
+
+      if (sort === "marks-desc") {
+        list.sort((a, b) => b.marks - a.marks);
+      } else {
+        const rank = { Easy: 1, Medium: 2, Hard: 3 };
+        list.sort((a, b) => rank[a.diff] - rank[b.diff] || b.marks - a.marks);
+      }
+
+      document.getElementById("weightage-list").innerHTML = list.map((c) => {
+        const p = state.chapterProgress[c.id] || {};
+        return `
+          <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2.5">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md border ${subjBadge(c.sub)}">${c.sub}</span>
+                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md ${diffBadge(c.diff)}">${c.diff}</span>
+                </div>
+                <h3 class="mt-1.5 text-sm font-extrabold text-slate-900 dark:text-white">${c.ch}</h3>
+              </div>
+              <span class="shrink-0 text-xs font-extrabold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">~${c.marks} Marks</span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">${c.tip}</p>
+            <div class="grid grid-cols-3 gap-2 pt-1 text-[11px] font-bold">
+              <label class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800/70 cursor-pointer">
+                <input type="checkbox" data-ch-id="${c.id}" data-ch-pillar="lecture" ${p.lecture ? "checked" : ""} class="ch-pillar-check w-3.5 h-3.5 accent-indigo-600 rounded" />
+                <span>Lecture</span>
+              </label>
+              <label class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800/70 cursor-pointer">
+                <input type="checkbox" data-ch-id="${c.id}" data-ch-pillar="practice" ${p.practice ? "checked" : ""} class="ch-pillar-check w-3.5 h-3.5 accent-emerald-600 rounded" />
+                <span>Practice</span>
+              </label>
+              <label class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800/70 cursor-pointer">
+                <input type="checkbox" data-ch-id="${c.id}" data-ch-pillar="revision" ${p.revision ? "checked" : ""} class="ch-pillar-check w-3.5 h-3.5 accent-amber-500 rounded" />
+                <span>Revision</span>
+              </label>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    ["wt-subject", "wt-diff", "wt-sort"].forEach((id) => {
+      document.getElementById(id).addEventListener("change", renderWeightage);
+    });
+
+    // Planner Render
+    function renderPlanner() {
+      const block = document.getElementById("planner-block").value;
+      const subj = document.getElementById("planner-subject").value;
+      const status = document.getElementById("planner-status").value;
+      const q = document.getElementById("planner-search").value.trim().toLowerCase();
+
+      const filtered = DAYS_DATA.filter((d) => {
+        if (block !== "all") {
+          const [lo, hi] = block.split("-").map(Number);
+          if (d.day < lo || d.day > hi) return false;
+        }
+        if (subj !== "all" && d.s1Sub !== subj && d.s2Sub !== subj) return false;
+        const isDone = !!state.completedDays[d.day];
+        if (status === "done" && !isDone) return false;
+        if (status === "pending" && isDone) return false;
+        if (q) {
+          const hay = `day ${d.day} ${d.s1Sub} ${d.s1Topic} ${d.s2Sub} ${d.s2Topic}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      const container = document.getElementById("planner-list");
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="bg-white dark:bg-slate-900 rounded-2xl p-8 text-center text-sm text-slate-500 border border-slate-200 dark:border-slate-800">No days match your filters.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map((d) => {
+        const done = !!state.completedDays[d.day];
+        const dayLecs = LECTURES_DATA.filter((l) => l.day === d.day);
+        const pyqs = state.pyqsByDay[d.day] || 0;
+        const hasNote = !!(state.notesByDay[d.day] && state.notesByDay[d.day].trim());
+        const isTest = d.s1Sub === "TEST";
+
+        const lecsHtml = dayLecs.map((l) => {
+          const watched = !!state.completedLectures[l.id];
+          return `
+            <div class="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-xs">
+              <div class="flex items-center gap-2 min-w-0">
+                <input type="checkbox" data-lec-id="${l.id}" ${watched ? "checked" : ""} class="lec-check w-4 h-4 accent-emerald-600 rounded cursor-pointer shrink-0" />
+                <span class="font-semibold truncate ${watched ? "line-through text-slate-400" : ""}">${l.title}</span>
+                <span class="text-[11px] text-slate-500 shrink-0">${fmtHoursShort(l.sec / state.speed)}</span>
+              </div>
+              <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="shrink-0 font-bold text-indigo-600 dark:text-indigo-400 hover:underline">Watch &rarr;</a>
+            </div>
+          `;
+        }).join("");
+
+        return `
+          <div class="bg-white dark:bg-slate-900 rounded-2xl p-3.5 sm:p-4 border ${done ? "border-emerald-300 dark:border-emerald-800/70 bg-emerald-50/20 dark:bg-emerald-950/10" : "border-slate-200 dark:border-slate-800"} shadow-sm space-y-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2.5">
+              <div class="flex items-center gap-2.5 flex-1 min-w-0">
+                <input type="checkbox" data-day="${d.day}" ${done ? "checked" : ""} class="day-check w-5 h-5 accent-indigo-600 rounded cursor-pointer shrink-0" />
+                <span class="px-2 py-1 rounded-lg text-xs font-extrabold bg-slate-100 dark:bg-slate-800 shrink-0">DAY ${String(d.day).padStart(2, "0")}</span>
+                <div class="flex flex-wrap items-center gap-1.5 min-w-0">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-bold border ${subjBadge(d.s1Sub)}">${isTest ? d.s1Topic : `${d.s1Sub}: ${d.s1Topic}`}</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-semibold border ${subjBadge(d.s2Sub)}">${isTest ? d.s2Topic : (d.s2Sub === "REVISION" ? d.s2Topic : `${d.s2Sub}: ${d.s2Topic}`)}</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                ${pyqs > 0 ? `<span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">${pyqs} PYQs</span>` : ""}
+                <button type="button" data-note-day="${d.day}" class="note-btn text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                  ${hasNote ? "Edit Notes" : "+ Notes / PYQs"}
+                </button>
+              </div>
+            </div>
+            ${dayLecs.length > 0 ? `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:pl-7">${lecsHtml}</div>` : ""}
+          </div>
+        `;
+      }).join("");
+    }
+
+    ["planner-block", "planner-subject", "planner-status"].forEach((id) => {
+      document.getElementById(id).addEventListener("change", renderPlanner);
+    });
+    document.getElementById("planner-search").addEventListener("input", renderPlanner);
+
+    // Lectures Tab Render (Direct YouTube Links)
+    let activeLecSubj = "all";
+    document.querySelectorAll(".lec-subj-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activeLecSubj = btn.dataset.lecSubj;
+        document.querySelectorAll(".lec-subj-btn").forEach((b) => {
+          const isAct = b === btn;
+          b.className = `lec-subj-btn px-3 py-1.5 rounded-lg text-xs font-bold ${isAct ? "bg-indigo-600 text-white" : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}`;
+        });
+        renderLectures();
+      });
+    });
+    document.getElementById("lec-status-filter").addEventListener("change", renderLectures);
+    document.getElementById("lec-search").addEventListener("input", renderLectures);
+
+    function renderLectures() {
+      const st = document.getElementById("lec-status-filter").value;
+      const q = document.getElementById("lec-search").value.trim().toLowerCase();
+
+      const list = LECTURES_DATA.filter((l) => {
+        if (activeLecSubj !== "all" && l.subject !== activeLecSubj) return false;
+        const done = !!state.completedLectures[l.id];
+        if (st === "done" && !done) return false;
+        if (st === "pending" && done) return false;
+        if (q && !`${l.title} day ${l.day} ${l.subject}`.toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      const grid = document.getElementById("lectures-grid");
+      if (list.length === 0) {
+        grid.innerHTML = `<div class="col-span-full bg-white dark:bg-slate-900 rounded-2xl p-8 text-center text-sm text-slate-500 border border-slate-200 dark:border-slate-800">No lectures match your filter.</div>`;
+        return;
+      }
+
+      grid.innerHTML = list.map((l) => {
+        const done = !!state.completedLectures[l.id];
+        return `
+          <div class="rounded-2xl p-4 text-white ${lecCardColors(l.subject)} shadow-sm flex items-center justify-between gap-3 ${done ? "opacity-75" : ""}">
+            <div class="min-w-0 space-y-1">
+              <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider opacity-90">
+                <input type="checkbox" data-lec-id="${l.id}" ${done ? "checked" : ""} class="lec-check w-4 h-4 accent-white rounded cursor-pointer" />
+                <span>DAY ${String(l.day).padStart(2, "0")} &bull; ${l.subject}</span>
+              </div>
+              <div class="font-extrabold text-sm sm:text-base truncate ${done ? "line-through" : ""}">${l.title}</div>
+              <div class="text-xs opacity-90">MANZIL 2024 / 2025 &bull; ${l.tag}</div>
+              <div class="text-xs font-semibold bg-black/20 inline-block px-2 py-0.5 rounded-md">
+                ${state.speed}x: ${fmtDur(l.sec / state.speed)} <span class="opacity-75 hidden sm:inline">(1x: ${fmtDur(l.sec)})</span>
+              </div>
+            </div>
+            <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="shrink-0 px-3.5 py-2 rounded-full bg-white text-slate-900 font-extrabold text-xs hover:scale-105 transition shadow">
+              CLICK &gt;
+            </a>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // Global event delegation
+    document.addEventListener("change", (e) => {
+      if (e.target.classList.contains("todo-check")) {
+        const id = Number(e.target.dataset.todoId);
+        const item = state.todos.find((t) => t.id === id);
+        if (item) {
+          item.done = e.target.checked;
+          if (item.done) recordStreakToday();
+          if (item.chId) {
+            state.chapterProgress[item.chId] = state.chapterProgress[item.chId] || {};
+            state.chapterProgress[item.chId][item.type] = item.done;
+          }
+          saveState();
+          renderKPIs();
+          renderTodo();
+          renderWeightage();
+        }
+      } else if (e.target.classList.contains("ch-pillar-check")) {
+        const chId = e.target.dataset.chId;
+        const pillar = e.target.dataset.chPillar;
+        state.chapterProgress[chId] = state.chapterProgress[chId] || {};
+        state.chapterProgress[chId][pillar] = e.target.checked;
+        saveState();
+        renderKPIs();
+      } else if (e.target.classList.contains("day-check")) {
+        const day = Number(e.target.dataset.day);
+        state.completedDays[day] = e.target.checked;
+        if (e.target.checked) recordStreakToday();
+        const d = DAYS_DATA.find((x) => x.day === day);
+        if (d) {
+          const chObj = CHAPTER_WEIGHTAGE.find((c) => c.ch === d.s1Topic);
+          if (chObj) {
+            state.chapterProgress[chObj.id] = state.chapterProgress[chObj.id] || {};
+            state.chapterProgress[chObj.id].lecture = e.target.checked;
+            state.chapterProgress[chObj.id].practice = e.target.checked;
+          }
+        }
+        saveState();
+        renderKPIs();
+        renderPlanner();
+        renderWeightage();
+      } else if (e.target.classList.contains("lec-check")) {
+        const id = Number(e.target.dataset.lecId);
+        state.completedLectures[id] = e.target.checked;
+        const lec = LECTURES_DATA.find((l) => l.id === id);
+        if (lec) {
+          const d = DAYS_DATA.find((x) => x.day === lec.day);
+          if (d) {
+            const chObj = CHAPTER_WEIGHTAGE.find((c) => c.ch === d.s1Topic);
+            if (chObj) {
+              state.chapterProgress[chObj.id] = state.chapterProgress[chObj.id] || {};
+              state.chapterProgress[chObj.id].lecture = e.target.checked;
+            }
+          }
+        }
+        saveState();
+        renderKPIs();
+        renderPlanner();
+        renderLectures();
+        renderWeightage();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      const delTodo = e.target.closest(".del-todo");
+      if (delTodo) {
+        const id = Number(delTodo.dataset.delTodo);
+        state.todos = state.todos.filter((t) => t.id !== id);
+        saveState();
+        renderKPIs();
+        renderTodo();
+        return;
+      }
+      const noteBtn = e.target.closest(".note-btn");
+      if (noteBtn) {
+        activeModalDay = Number(noteBtn.dataset.noteDay);
+        const d = DAYS_DATA.find((x) => x.day === activeModalDay);
+        document.getElementById("modal-day-title").textContent = `Day ${String(activeModalDay).padStart(2, "0")} — Notes & PYQs`;
+        document.getElementById("modal-day-topics").innerHTML = `<div><strong>Slot 1:</strong> ${d.s1Sub} — ${d.s1Topic}</div><div><strong>Slot 2:</strong> ${d.s2Sub} — ${d.s2Topic}</div>`;
+        document.getElementById("modal-pyqs").value = state.pyqsByDay[activeModalDay] || 0;
+        document.getElementById("modal-notes").value = state.notesByDay[activeModalDay] || "";
+        document.getElementById("day-modal").classList.remove("hidden");
+        return;
+      }
+      const delMock = e.target.closest(".del-mock");
+      if (delMock) {
+        const id = Number(delMock.dataset.delMock);
+        state.mocks = state.mocks.filter((m) => m.id !== id);
+        saveState();
+        renderKPIs();
+        renderMocks();
+        renderCharts();
+      }
+    });
+
+    // Day Notes Modal
+    let activeModalDay = null;
+    function closeDayModal() {
+      document.getElementById("day-modal").classList.add("hidden");
+      activeModalDay = null;
+    }
+    document.getElementById("modal-close").addEventListener("click", closeDayModal);
+    document.getElementById("modal-cancel").addEventListener("click", closeDayModal);
+    document.getElementById("modal-save").addEventListener("click", () => {
+      if (activeModalDay === null) return;
+      state.pyqsByDay[activeModalDay] = Math.max(0, parseInt(document.getElementById("modal-pyqs").value, 10) || 0);
+      state.notesByDay[activeModalDay] = document.getElementById("modal-notes").value;
+      saveState();
+      closeDayModal();
+      renderKPIs();
+      renderPlanner();
+      showToast("Day notes & PYQs saved");
+    });
+
+    // Mocks
+    document.getElementById("mock-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const label = document.getElementById("mock-label").value;
+      const phy = Math.min(100, Math.max(0, parseInt(document.getElementById("mock-phy").value, 10) || 0));
+      const chem = Math.min(100, Math.max(0, parseInt(document.getElementById("mock-chem").value, 10) || 0));
+      const math = Math.min(100, Math.max(0, parseInt(document.getElementById("mock-math").value, 10) || 0));
+      const notes = document.getElementById("mock-notes").value.trim();
+      state.mocks.push({ id: Date.now(), label, date: new Date().toLocaleDateString(), phy, chem, math, notes });
+      saveState();
+      e.target.reset();
+      renderKPIs();
+      renderMocks();
+      renderCharts();
+      showToast(`Saved ${label}: ${phy + chem + math}/300`);
+    });
+
+    function renderMocks() {
+      const box = document.getElementById("mock-list");
+      if (state.mocks.length === 0) {
+        box.innerHTML = `<div class="bg-white dark:bg-slate-900 rounded-2xl p-6 text-center text-xs text-slate-500 border border-slate-200 dark:border-slate-800">No mock tests logged yet. Log your Day 10, 20, 30, 40, 50, or 60 mock scores above.</div>`;
+        return;
+      }
+      box.innerHTML = [...state.mocks].reverse().map((m) => `
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <div class="font-bold text-sm">${m.label} <span class="text-xs font-normal text-slate-400">(${m.date})</span></div>
+            <div class="text-xs text-slate-500 mt-0.5">Physics: <strong class="text-red-500">${m.phy}</strong> &bull; Chem: <strong class="text-emerald-500">${m.chem}</strong> &bull; Maths: <strong class="text-blue-500">${m.math}</strong></div>
+            ${m.notes ? `<p class="text-xs text-slate-600 dark:text-slate-300 mt-1">${m.notes}</p>` : ""}
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-lg font-extrabold text-indigo-600 dark:text-indigo-400">${m.phy + m.chem + m.math} / 300</span>
+            <button type="button" data-del-mock="${m.id}" class="del-mock text-xs font-bold text-red-500 hover:text-red-600">Delete</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // Charts
+    let chartSubj = null, chartShare = null, chartMock = null, chartPillar = null, chartDiff = null;
+    function renderCharts() {
+      const textColor = state.darkMode ? "#cbd5e1" : "#475569";
+      const gridColor = state.darkMode ? "#1e293b" : "#e2e8f0";
+
+      const pPct = Math.round((LECTURES_DATA.filter((l) => l.subject === "PHYSICS" && state.completedLectures[l.id]).length / 23) * 100);
+      const cPct = Math.round((LECTURES_DATA.filter((l) => l.subject === "CHEMISTRY" && state.completedLectures[l.id]).length / 26) * 100);
+      const mPct = Math.round((LECTURES_DATA.filter((l) => l.subject === "MATHEMATICS" && state.completedLectures[l.id]).length / 29) * 100);
+
+      if (chartSubj) chartSubj.destroy();
+      chartSubj = new Chart(document.getElementById("chart-subject-progress"), {
+        type: "bar",
+        data: {
+          labels: ["Physics", "Chemistry", "Mathematics"],
+          datasets: [{ label: "% Watched", data: [pPct, cPct, mPct], backgroundColor: ["#dc2626", "#059669", "#2563eb"], borderRadius: 8 }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          scales: { y: { beginAtZero: true, max: 100, ticks: { color: textColor }, grid: { color: gridColor } }, x: { ticks: { color: textColor }, grid: { display: false } } },
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      if (chartShare) chartShare.destroy();
+      chartShare = new Chart(document.getElementById("chart-watch-share"), {
+        type: "doughnut",
+        data: {
+          labels: ["Physics (183.9h)", "Chemistry (151.7h)", "Mathematics (166.1h)"],
+          datasets: [{ data: [183.88, 151.74, 166.09], backgroundColor: ["#dc2626", "#059669", "#2563eb"], borderWidth: 0 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "bottom", labels: { color: textColor } } } }
+      });
+
+      const subjs = ["PHYSICS", "CHEMISTRY", "MATHS"];
+      const pillarData = (pillar) => subjs.map((s) => {
+        const list = CHAPTER_WEIGHTAGE.filter((c) => c.sub === s);
+        const done = list.filter((c) => (state.chapterProgress[c.id] || {})[pillar]).length;
+        return Math.round((done / list.length) * 100);
+      });
+
+      if (chartPillar) chartPillar.destroy();
+      chartPillar = new Chart(document.getElementById("chart-pillar-progress"), {
+        type: "bar",
+        data: {
+          labels: ["Physics", "Chemistry", "Maths"],
+          datasets: [
+            { label: "Lecture %", data: pillarData("lecture"), backgroundColor: "#4f46e5", borderRadius: 4 },
+            { label: "Practice %", data: pillarData("practice"), backgroundColor: "#059669", borderRadius: 4 },
+            { label: "Revision %", data: pillarData("revision"), backgroundColor: "#f59e0b", borderRadius: 4 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          scales: { y: { beginAtZero: true, max: 100, ticks: { color: textColor }, grid: { color: gridColor } }, x: { ticks: { color: textColor }, grid: { display: false } } },
+          plugins: { legend: { labels: { color: textColor } } }
+        }
+      });
+
+      const diffPct = (dLevel) => {
+        const list = CHAPTER_WEIGHTAGE.filter((c) => c.diff === dLevel);
+        const sumDone = list.reduce((acc, c) => {
+          const p = state.chapterProgress[c.id] || {};
+          return acc + ((p.lecture ? 0.35 : 0) + (p.practice ? 0.40 : 0) + (p.revision ? 0.25 : 0));
+        }, 0);
+        return Math.round((sumDone / list.length) * 100);
+      };
+
+      if (chartDiff) chartDiff.destroy();
+      chartDiff = new Chart(document.getElementById("chart-diff-mastery"), {
+        type: "bar",
+        data: {
+          labels: ["Easy Chapters", "Medium Chapters", "Hard Chapters"],
+          datasets: [{ label: "Mastery %", data: [diffPct("Easy"), diffPct("Medium"), diffPct("Hard")], backgroundColor: ["#10b981", "#f59e0b", "#ef4444"], borderRadius: 8 }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          scales: { y: { beginAtZero: true, max: 100, ticks: { color: textColor }, grid: { color: gridColor } }, x: { ticks: { color: textColor }, grid: { display: false } } },
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      if (chartMock) chartMock.destroy();
+      chartMock = new Chart(document.getElementById("chart-mock-trend"), {
+        type: "line",
+        data: {
+          labels: state.mocks.length ? state.mocks.map((m, i) => `M${i + 1}`) : ["No Data"],
+          datasets: [{
+            label: "Total Score (/300)",
+            data: state.mocks.length ? state.mocks.map((m) => m.phy + m.chem + m.math) : [0],
+            borderColor: "#4f46e5",
+            backgroundColor: "rgba(79, 70, 229, 0.15)",
+            fill: true, tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          scales: { y: { beginAtZero: true, max: 300, ticks: { color: textColor }, grid: { color: gridColor } }, x: { ticks: { color: textColor }, grid: { display: false } } },
+          plugins: { legend: { labels: { color: textColor } } }
+        }
+      });
+    }
+
+    // Pomodoro Timer
+    let timerPresetMin = 50;
+    let timerSecondsLeft = 50 * 60;
+    let timerInterval = null;
+    let soundOn = true;
+
+    function playChime() {
+      if (!soundOn) return;
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(660, ctx.currentTime);
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.6);
+      } catch (e) {}
+    }
+
+    function updateTimerUI() {
+      const m = String(Math.floor(timerSecondsLeft / 60)).padStart(2, "0");
+      const s = String(timerSecondsLeft % 60).padStart(2, "0");
+      document.getElementById("timer-display").textContent = `${m}:${s}`;
+      document.getElementById("timer-sessions").textContent = state.pomodoroSessions || 0;
+    }
+
+    document.getElementById("mute-toggle").addEventListener("click", (e) => {
+      soundOn = !soundOn;
+      e.target.textContent = soundOn ? "Sound: ON" : "Sound: OFF";
+    });
+
+    document.querySelectorAll(".preset-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        document.getElementById("timer-start").textContent = "Start";
+        timerPresetMin = Number(btn.dataset.preset);
+        timerSecondsLeft = timerPresetMin * 60;
+        document.querySelectorAll(".preset-btn").forEach((b) => {
+          b.className = `preset-btn px-3 py-1.5 rounded-lg text-xs font-bold ${b === btn ? "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300" : "bg-slate-100 dark:bg-slate-800"}`;
+        });
+        updateTimerUI();
+      });
+    });
+
+    document.getElementById("timer-start").addEventListener("click", (e) => {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        e.target.textContent = "Resume";
+        return;
+      }
+      e.target.textContent = "Pause";
+      timerInterval = setInterval(() => {
+        timerSecondsLeft--;
+        if (timerSecondsLeft <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          timerSecondsLeft = timerPresetMin * 60;
+          state.pomodoroSessions = (state.pomodoroSessions || 0) + 1;
+          saveState();
+          document.getElementById("timer-start").textContent = "Start";
+          playChime();
+          showToast("Focus session complete!");
+        }
+        updateTimerUI();
+      }, 1000);
+    });
+
+    document.getElementById("timer-reset").addEventListener("click", () => {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerSecondsLeft = timerPresetMin * 60;
+      document.getElementById("timer-start").textContent = "Start";
+      updateTimerUI();
+    });
+
+    // Backup & Reset
+    document.getElementById("export-btn").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "prepskm-progress-backup.json";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      showToast("Backup downloaded");
+    });
+
+    document.getElementById("import-input").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(reader.result);
+          state = { ...state, ...parsed };
+          saveState();
+          applyTheme();
+          updateCountdown();
+          renderAll();
+          showToast("Progress imported!");
+        } catch (err) {
+          showToast("Invalid JSON backup file");
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    document.getElementById("reset-open-btn").addEventListener("click", () => {
+      document.getElementById("reset-modal").classList.remove("hidden");
+    });
+    document.getElementById("reset-cancel").addEventListener("click", () => {
+      document.getElementById("reset-modal").classList.add("hidden");
+    });
+    document.getElementById("reset-confirm").addEventListener("click", () => {
+      state = {
+        completedDays: {},
+        completedLectures: {},
+        pyqsByDay: {},
+        notesByDay: {},
+        chapterProgress: {},
+        todos: [],
+        mocks: [],
+        speed: 1,
+        examDate: "2027-01-22",
+        darkMode: state.darkMode,
+        pomodoroSessions: 0
+      };
+      saveState();
+      document.getElementById("reset-modal").classList.add("hidden");
+      speedSel.value = "1";
+      renderAll();
+      showToast("All progress reset");
+    });
+
+    function renderAll() {
+      populateTodoChapters();
+      renderKPIs();
+      renderTodo();
+      renderWeightage();
+      renderPlanner();
+      renderLectures();
+      renderMocks();
+      updateTimerUI();
+    }
+
+    applyTheme();
+    updateCountdown();
+    renderAll();
+  </script>
+</body>
+</html>
 
